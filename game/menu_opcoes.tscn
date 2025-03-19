@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj1dk6rsw0p3b"]
+
+[ext_resource type="Script" uid="uid://c0va27yp52a8s" path="res://menu_opcoes.gd" id="1_60l56"]
+[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="1_sswwn"]
+[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="4_gqiht"]
+[ext_resource type="Texture2D" uid="uid://briq2yi0pd5ss" path="res://Backgrounds/arco_iris_png.png" id="5_b0m46"]
+
+[sub_resource type="FontVariation" id="FontVariation_w0vso"]
+base_font = ExtResource("1_sswwn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nto3o"]
+bg_color = Color(0.709804, 0.584314, 0.768627, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Menu Opcoes" type="Node2D"]
+script = ExtResource("1_60l56")
+
+[node name="Label Titulo" type="Label" parent="."]
+offset_left = 385.0
+offset_top = 10.0
+offset_right = 1011.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_font_sizes/font_size = 100
+text = "Opções"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(687.5, 385)
+scale = Vector2(5.11808, 4.35556)
+texture = ExtResource("4_gqiht")
+
+[node name="Rainbow" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(677, 395)
+scale = Vector2(2.18211, 1.92962)
+texture = ExtResource("5_b0m46")
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 32.0
+offset_right = 218.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nto3o")
+
+[node name="Voltar" type="Button" parent="PanelContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = ExtResource("1_sswwn")
+theme_override_font_sizes/font_size = 28
+text = "Voltar"
+flat = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 80)
+offset_left = 269.0
+offset_top = 163.0
+offset_right = 1152.0
+offset_bottom = 744.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nto3o")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label Volume" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_font_sizes/font_size = 20
+text = "Volume"
+vertical_alignment = 1
+uppercase = true
+
+[node name="volume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+min_value = -20.0
+max_value = 20.0
+
+[node name="Label Musica" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_font_sizes/font_size = 20
+text = "Música"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Musica Toggle" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+button_pressed = true
+vertical_icon_alignment = 0
+
+[connection signal="pressed" from="PanelContainer2/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/Musica Toggle" to="." method="_on_musica_toggle_toggled"]

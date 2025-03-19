@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3tfwboodjqrs"]
+[gd_scene load_steps=8 format=3 uid="uid://b3tfwboodjqrs"]
 
-[ext_resource type="FontFile" uid="uid://c2hc1qvno2j8f" path="res://Fonts/RAVIE.TTF" id="1_5a6yv"]
-[ext_resource type="Texture2D" uid="uid://wq6ft7y56gtl" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
-[ext_resource type="Texture2D" uid="uid://cqmd28hjfsmqm" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
-[ext_resource type="Texture2D" uid="uid://vc642wqi0gvd" path="res://Backgrounds/background.png" id="4_awogh"]
-[ext_resource type="Texture2D" uid="uid://cdg0w1v7kctjh" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
+[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="1_5a6yv"]
+[ext_resource type="Script" uid="uid://b54v2gs65p5is" path="res://menu_inicial.gd" id="1_ktf6r"]
+[ext_resource type="Texture2D" uid="uid://b3qvx3rlmnewf" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
+[ext_resource type="Texture2D" uid="uid://bu08mrq4u5uci" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
+[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="4_awogh"]
+[ext_resource type="Texture2D" uid="uid://briq2yi0pd5ss" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
 
 [sub_resource type="FontVariation" id="FontVariation_w0vso"]
 base_font = ExtResource("1_5a6yv")
 
-[node name="Node2D" type="Node2D"]
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_ktf6r")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 330.0
@@ -49,3 +51,6 @@ texture = ExtResource("4_awogh")
 position = Vector2(677, 395)
 scale = Vector2(2.18211, 1.92962)
 texture = ExtResource("5_ukajr")
+
+[connection signal="pressed" from="Button_Jogar" to="." method="_on_button_jogar_pressed"]
+[connection signal="pressed" from="Button_Options" to="." method="_on_button_options_pressed"]
