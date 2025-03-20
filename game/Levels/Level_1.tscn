@@ -1,0 +1,166 @@
+[gd_scene load_steps=18 format=3 uid="uid://cpqbryn4iw6sk"]
+
+[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="1_43ny2"]
+[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="1_ka50d"]
+[ext_resource type="Script" uid="uid://bky80kxdkgkls" path="res://Levels/level_1.gd" id="1_uq0sc"]
+[ext_resource type="Texture2D" uid="uid://bnq2ujolwq1di" path="res://Backgrounds/house_background.png" id="3_uq0sc"]
+[ext_resource type="Texture2D" uid="uid://8k3md3fyfgs0" path="res://Images/background/comecando_dia_1_bg.png" id="4_x75k1"]
+[ext_resource type="Texture2D" uid="uid://bsybc8re3y7i5" path="res://Images/full/comecando_dia_1.png" id="5_wpk6a"]
+[ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Levels/puzzle_dropabble.gd" id="5_x75k1"]
+[ext_resource type="Texture2D" uid="uid://cd6p8211ccg7m" path="res://Images/full/comecando_dia_2.png" id="6_c1kre"]
+[ext_resource type="Texture2D" uid="uid://rdhvst24rc8v" path="res://Images/background/comecando_dia_2_bg.png" id="7_hofu3"]
+[ext_resource type="Texture2D" uid="uid://bi0uyvoblsm6u" path="res://Images/pieces/comecando_dia_2_piece_1.png" id="11_23710"]
+[ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Levels/puzzle_piece.gd" id="11_c1kre"]
+[ext_resource type="Texture2D" uid="uid://5efnhhj262lo" path="res://Images/pieces/comecando_dia_1_piece_1.png" id="12_hofu3"]
+
+[sub_resource type="FontVariation" id="FontVariation_23710"]
+base_font = ExtResource("1_43ny2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpk6a"]
+size = Vector2(201, 291)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmwl1"]
+size = Vector2(196.5, 298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rttb"]
+size = Vector2(289, 330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqtfo"]
+size = Vector2(290, 330)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_uq0sc")
+
+[node name="Label Titulo" type="Label" parent="."]
+offset_left = 525.0
+offset_top = 45.0
+offset_right = 1151.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_23710")
+theme_override_font_sizes/font_size = 35
+text = "Começando o Dia"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(687.5, 385)
+scale = Vector2(5.11808, 4.35556)
+texture = ExtResource("1_ka50d")
+
+[node name="House" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(834, 385)
+scale = Vector2(0.541934, 0.611465)
+texture = ExtResource("3_uq0sc")
+
+[node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/House"]
+visible = false
+position = Vector2(-378.275, 165.177)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("5_wpk6a")
+
+[node name="puzzle2_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/House"]
+visible = false
+position = Vector2(356.132, 170.083)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("6_c1kre")
+
+[node name="puzzle1_piece" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(200, 600)
+script = ExtResource("11_c1kre")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle1_piece"]
+scale = Vector2(0.239058, 0.262214)
+texture = ExtResource("12_hofu3")
+
+[node name="Area2D" type="Area2D" parent="puzzle1_piece"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_piece/Area2D"]
+shape = SubResource("RectangleShape2D_wpk6a")
+
+[node name="puzzle1_transparent" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(629, 486)
+scale = Vector2(0.233032, 0.26293)
+texture = ExtResource("4_x75k1")
+
+[node name="puzzle1_dropabble" type="StaticBody2D" parent="." groups=["dropable"]]
+position = Vector2(577, 511)
+scale = Vector2(0.999998, 1)
+script = ExtResource("5_x75k1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_dropabble"]
+shape = SubResource("RectangleShape2D_nmwl1")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle1_dropabble"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -149.0
+offset_right = 102.5
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle2_piece" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(205, 267)
+script = ExtResource("11_c1kre")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle2_piece"]
+scale = Vector2(0.314, 0.355)
+texture = ExtResource("11_23710")
+
+[node name="Area2D" type="Area2D" parent="puzzle2_piece"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_piece/Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_6rttb")
+
+[node name="puzzle2_transparent" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1027, 489)
+scale = Vector2(0.314322, 0.35465)
+texture = ExtResource("7_hofu3")
+
+[node name="puzzle2_dropabble" type="StaticBody2D" parent="." groups=["dropable"]]
+position = Vector2(1026, 512)
+scale = Vector2(0.999998, 1)
+script = ExtResource("5_x75k1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble"]
+shape = SubResource("RectangleShape2D_uqtfo")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -167.5
+offset_right = 153.0
+offset_bottom = 167.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="body_entered" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle2_piece/Area2D" to="puzzle2_piece" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle2_piece/Area2D" to="puzzle2_piece" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle2_piece/Area2D" to="puzzle2_piece" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle2_piece/Area2D" to="puzzle2_piece" method="_on_area_2d_mouse_exited"]

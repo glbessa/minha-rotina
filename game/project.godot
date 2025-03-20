@@ -18,14 +18,23 @@ config/icon="res://icon.svg"
 [autoload]
 
 MainMusic="*res://Music.tscn"
+Global="*res://global.gd"
 
 [display]
 
 window/size/viewport_width=1366
 window/size/viewport_height=768
-window/size/mode=3
 window/size/borderless=true
 window/vsync/vsync_mode=2
+
+[editor]
+
+movie_writer/movie_file="C:/Users/igorg/Videos/Godot/minha-rotina.avi"
+
+[global_group]
+
+dropable=""
+table=""
 
 [input_devices]
 
