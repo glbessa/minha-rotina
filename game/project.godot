@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MainMusic="*res://Music.tscn"
-Global="*res://global.gd"
+Global="*res://Scripts/global.gd"
 
 [display]
 

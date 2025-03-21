@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bnq2ujolwq1di" path="res://Backgrounds/house_background.png" id="3_uq0sc"]
 [ext_resource type="Texture2D" uid="uid://8k3md3fyfgs0" path="res://Images/background/comecando_dia_1_bg.png" id="4_x75k1"]
 [ext_resource type="Texture2D" uid="uid://bsybc8re3y7i5" path="res://Images/full/comecando_dia_1.png" id="5_wpk6a"]
-[ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Levels/puzzle_dropabble.gd" id="5_x75k1"]
+[ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="5_x75k1"]
 [ext_resource type="Texture2D" uid="uid://cd6p8211ccg7m" path="res://Images/full/comecando_dia_2.png" id="6_c1kre"]
 [ext_resource type="Texture2D" uid="uid://rdhvst24rc8v" path="res://Images/background/comecando_dia_2_bg.png" id="7_hofu3"]
 [ext_resource type="Texture2D" uid="uid://bi0uyvoblsm6u" path="res://Images/pieces/comecando_dia_2_piece_1.png" id="11_23710"]
-[ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Levels/puzzle_piece.gd" id="11_c1kre"]
+[ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="11_c1kre"]
 [ext_resource type="Texture2D" uid="uid://5efnhhj262lo" path="res://Images/pieces/comecando_dia_1_piece_1.png" id="12_hofu3"]
 
 [sub_resource type="FontVariation" id="FontVariation_23710"]
@@ -59,11 +59,37 @@ position = Vector2(834, 385)
 scale = Vector2(0.541934, 0.611465)
 texture = ExtResource("3_uq0sc")
 
+[node name="Label Titulo" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
+offset_left = -693.811
+offset_top = -305.823
+offset_right = -67.8114
+offset_bottom = -129.823
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_23710")
+theme_override_font_sizes/font_size = 35
+text = "Levantando da Cama"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/House"]
 visible = false
 position = Vector2(-378.275, 165.177)
 scale = Vector2(0.43, 0.43)
 texture = ExtResource("5_wpk6a")
+
+[node name="Label Titulo2" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
+offset_left = 49.8215
+offset_top = -305.823
+offset_right = 675.822
+offset_bottom = -129.823
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_23710")
+theme_override_font_sizes/font_size = 35
+text = "Tomar Café da Manhã"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="puzzle2_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/House"]
 visible = false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b3tfwboodjqrs"]
 
 [ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="1_5a6yv"]
-[ext_resource type="Script" uid="uid://b54v2gs65p5is" path="res://menu_inicial.gd" id="1_ktf6r"]
+[ext_resource type="Script" uid="uid://b54v2gs65p5is" path="res://Scripts/menu_inicial.gd" id="1_ktf6r"]
 [ext_resource type="Texture2D" uid="uid://b3qvx3rlmnewf" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
 [ext_resource type="Texture2D" uid="uid://bu08mrq4u5uci" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
 [ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="4_awogh"]
