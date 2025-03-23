@@ -7,6 +7,7 @@ var body_ref
 var offset: Vector2
 var currentPos: Vector2
 var initialPos: Vector2
+var placed_correctly = false
 
 func _ready():
 	initialPos = global_position
@@ -28,9 +29,23 @@ func _input(event: InputEvent) -> void:
 				if is_inside_droppable and body_ref:
 					# Snap to the global position of the most recently entered droppable area
 					tween.tween_property(self, "global_position", body_ref.global_position, 0.2).set_ease(Tween.EASE_OUT)
+					
+					if is_same_puzzle_group(body_ref) and !placed_correctly:
+						get_tree().current_scene.add_correct_placement();
+						placed_correctly = true
+						print("added correct placement")
+					elif placed_correctly:
+						placed_correctly = false
+						get_tree().current_scene.sub_correct_placement();
+						print("removed correct placement (new wrong dropabble)")
+					
 				else:
 					# Return to the initial position
 					tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
+					if placed_correctly:
+						placed_correctly = false
+						get_tree().current_scene.sub_correct_placement();
+						print("removed correct placement (original pos)")
 				
 	if is_dragging and event is InputEventMouseMotion:
 		global_position = get_global_mouse_position() - offset
@@ -60,3 +75,16 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 			is_inside_droppable = false
 			body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
 			body_ref = null  # Clear the reference
+
+
+func is_same_puzzle_group(bodyref: Node2D) -> bool:
+	# Get all groups for self and the referenced body
+	var self_groups = self.get_groups()
+	var body_ref_groups = bodyref.get_groups()
+	
+	# Filter groups that start with "puzzle_"
+	var self_puzzle_groups = self_groups.filter(func(group): return group.begins_with("puzzle_"))
+	var body_ref_puzzle_groups = body_ref_groups.filter(func(group): return group.begins_with("puzzle_"))
+	
+	# Compare the filtered puzzle groups
+	return self_puzzle_groups == body_ref_puzzle_groups

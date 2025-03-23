@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj1dk6rsw0p3b"]
+[gd_scene load_steps=8 format=3 uid="uid://bj1dk6rsw0p3b"]
 
 [ext_resource type="Script" uid="uid://c0va27yp52a8s" path="res://Scripts/menu_opcoes.gd" id="1_60l56"]
-[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="1_sswwn"]
-[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="4_gqiht"]
-[ext_resource type="Texture2D" uid="uid://briq2yi0pd5ss" path="res://Backgrounds/arco_iris_png.png" id="5_b0m46"]
+[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="1_sswwn"]
+[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="4_gqiht"]
+[ext_resource type="Texture2D" uid="uid://ck6tx4jltepr3" path="res://Backgrounds/arco_iris_png.png" id="5_b0m46"]
 
 [sub_resource type="FontVariation" id="FontVariation_w0vso"]
 base_font = ExtResource("1_sswwn")
@@ -14,6 +14,9 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="FontVariation" id="FontVariation_60l56"]
+base_font = ExtResource("1_sswwn")
 
 [node name="Menu Opcoes" type="Node2D"]
 script = ExtResource("1_60l56")
@@ -84,7 +87,7 @@ theme_override_constants/margin_right = 40
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 
 [node name="Label Volume" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -120,6 +123,37 @@ size_flags_vertical = 4
 button_pressed = true
 vertical_icon_alignment = 0
 
+[node name="Label Delay" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_font_sizes/font_size = 20
+text = "Tempo para mostrar as imagens completas no início da fase"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" groups=["delay"]]
+layout_mode = 2
+
+[node name="Label Delay Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_60l56")
+theme_override_font_sizes/font_size = 20
+text = "5"
+vertical_alignment = 1
+uppercase = true
+
+[node name="delay" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 60.0
+value = 5.0
+
 [connection signal="pressed" from="PanelContainer2/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/Musica Toggle" to="." method="_on_musica_toggle_toggled"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/delay" to="." method="_on_delay_value_changed"]

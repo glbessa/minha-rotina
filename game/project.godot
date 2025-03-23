@@ -35,6 +35,10 @@ movie_writer/movie_file="C:/Users/igorg/Videos/Godot/minha-rotina.avi"
 
 dropable=""
 table=""
+puzzle=""
+completed_puzzle=""
+level_end=""
+level_start=""
 
 [input_devices]
 
