@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2jd0"]
 size = Vector2(360, 360)
 
-[node name="puzzle2_dropabble" type="StaticBody2D" groups=["dropable"]]
+[node name="puzzle2_dropabble" type="StaticBody2D" groups=["dropable", "puzzle"]]
 scale = Vector2(0.999998, 1)
 script = ExtResource("1_iy4sc")
 

@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sgqd"]
 size = Vector2(360, 360)
 
-[node name="puzzle_piece" type="Node2D"]
+[node name="puzzle_piece" type="Node2D" groups=["puzzle"]]
+z_index = 2
 script = ExtResource("1_5sgqd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

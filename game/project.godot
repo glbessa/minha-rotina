@@ -34,9 +34,7 @@ movie_writer/movie_file="C:/Users/igorg/Videos/Godot/minha-rotina.avi"
 [global_group]
 
 dropable=""
-table=""
 puzzle=""
-completed_puzzle=""
 level_end=""
 level_start=""
 

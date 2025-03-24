@@ -74,6 +74,5 @@ func add_correct_placement():
 func sub_correct_placement():
 	correct_placement = correct_placement - 1;
 	
-
 func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/Level_2.tscn") 
+	get_tree().change_scene_to_file("res://menu_inicial.tscn") # TODO: change to next level

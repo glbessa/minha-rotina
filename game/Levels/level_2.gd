@@ -21,15 +21,22 @@ func _ready():
 	finished_count = true
 	print("Total Puzzle Pieces: " + str(total_puzzle_pieces))
 	
-	timer.wait_time = Global.level_start_duration
 	# Hide all puzzle and level_end elements
 	hide_group("puzzle")
 	hide_group("level_end")
 	# Unhide all start elements
 	show_group("level_start")
-	timer.start()
-	# Connect the timer's timeout to the function that hides the start elements
-	timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
+	
+	if Global.level_start_duration == 0:
+		# Hide all start elements
+		hide_group("level_start")
+		# Unhide all puzzle elements
+		show_group("puzzle")
+	else:
+		timer.wait_time = Global.level_start_duration
+		timer.start()
+		# Connect the timer's timeout to the function that hides the start elements
+		timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
 
 func _process(delta):
 	update_countdown()
@@ -68,4 +75,4 @@ func sub_correct_placement():
 	correct_placement = correct_placement - 1;
 	
 func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu_inicial.tscn") # TODO: change to next level
+	get_tree().change_scene_to_file("res://Levels/Level_3.tscn") # TODO: change to next level
