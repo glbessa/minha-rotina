@@ -1,0 +1,424 @@
+[gd_scene load_steps=32 format=3 uid="uid://dwes3batmw05b"]
+
+[ext_resource type="Script" uid="uid://dbpkppttkadar" path="res://Levels/level_2.gd" id="1_lc8i2"]
+[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="2_xhmcf"]
+[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="3_p0224"]
+[ext_resource type="Texture2D" uid="uid://bjmqxjk1gm7av" path="res://Backgrounds/house_background.png" id="4_f8p00"]
+[ext_resource type="Texture2D" uid="uid://dkwl1gd8var33" path="res://Images/full/manha_1.png" id="5_vb2uo"]
+[ext_resource type="Texture2D" uid="uid://cq8o0qwjw4c52" path="res://Images/full/manha_2.png" id="6_dbc5v"]
+[ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="7_l1o3i"]
+[ext_resource type="Texture2D" uid="uid://cxee1ja3tqrqr" path="res://Images/full/manha_3.png" id="7_t5q4t"]
+[ext_resource type="Texture2D" uid="uid://bmb34y61yrps3" path="res://Images/background/manha_1_bg.png" id="8_lc8i2"]
+[ext_resource type="Texture2D" uid="uid://dkwl88j76beha" path="res://Images/pieces/manha_1_piece_1.png" id="10_4v3ld"]
+[ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="10_an8ag"]
+[ext_resource type="Texture2D" uid="uid://minxjfdvpp1p" path="res://Images/pieces/manha_2_piece_1.png" id="11_xhmcf"]
+[ext_resource type="Texture2D" uid="uid://dtwuli0humi54" path="res://Images/background/manha_2_bg.png" id="12_x6a2d"]
+[ext_resource type="Texture2D" uid="uid://c3r6euxtpntko" path="res://Images/pieces/manha_2_piece_2.png" id="12_xhmcf"]
+[ext_resource type="Texture2D" uid="uid://dt3ildvdst5yf" path="res://Images/pieces/manha_3_piece_1.png" id="13_p0224"]
+[ext_resource type="Texture2D" uid="uid://crgf4yhau0re6" path="res://Images/background/manha_3_bg.png" id="15_l1o3i"]
+
+[sub_resource type="FontVariation" id="FontVariation_23710"]
+base_font = ExtResource("2_xhmcf")
+
+[sub_resource type="FontVariation" id="FontVariation_vb2uo"]
+base_font = ExtResource("2_xhmcf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hofu3"]
+bg_color = Color(0.709804, 0.584314, 0.768627, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="FontVariation" id="FontVariation_nmwl1"]
+base_font = ExtResource("2_xhmcf")
+
+[sub_resource type="FontVariation" id="FontVariation_uqtfo"]
+base_font = ExtResource("2_xhmcf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rttb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="FontVariation" id="FontVariation_hofu3"]
+base_font = ExtResource("2_xhmcf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhmcf"]
+size = Vector2(95.0002, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6a2d"]
+size = Vector2(96, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0224"]
+size = Vector2(101, 216.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sgqd"]
+size = Vector2(102, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8p00"]
+size = Vector2(120, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1o3i"]
+size = Vector2(120, 211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc8i2"]
+size = Vector2(72.0011, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o7mx"]
+size = Vector2(71, 96)
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_lc8i2")
+
+[node name="Label Titulo" type="Label" parent="."]
+offset_left = 525.0
+offset_top = 45.0
+offset_right = 1151.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_23710")
+theme_override_font_sizes/font_size = 35
+text = "Manhã"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(687.5, 385)
+scale = Vector2(5.11808, 4.35556)
+texture = ExtResource("3_p0224")
+
+[node name="House" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(834, 385)
+scale = Vector2(0.541934, 0.611465)
+texture = ExtResource("4_f8p00")
+
+[node name="Label Puzzle1" type="Label" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 446.0
+offset_top = 188.0
+offset_right = 722.0
+offset_bottom = 245.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_vb2uo")
+theme_override_font_sizes/font_size = 18
+text = "Vestindo o Uniforme"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+position = Vector2(584, 363)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("5_vb2uo")
+
+[node name="Label Puzzle2" type="Label" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 854.0
+offset_top = 304.0
+offset_right = 1125.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_vb2uo")
+theme_override_font_sizes/font_size = 18
+text = "Indo para a Escola"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle2_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+position = Vector2(990, 510)
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("6_dbc5v")
+
+[node name="Label Puzzle3" type="Label" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 466.0
+offset_top = 498.0
+offset_right = 663.0
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_vb2uo")
+theme_override_font_sizes/font_size = 18
+text = "Estudando"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle3_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+position = Vector2(576, 649)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("7_t5q4t")
+
+[node name="PanelContainer" type="PanelContainer" parent="ParallaxBackground/ParallaxLayer" groups=["level_end"]]
+visible = false
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.301
+anchor_right = 0.275
+anchor_bottom = 0.947
+offset_left = 28.0
+offset_top = 222.0
+offset_right = 384.0
+offset_bottom = 736.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hofu3")
+
+[node name="MarginContainer" type="MarginContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 53
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label Titulo2" type="Label" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_nmwl1")
+theme_override_font_sizes/font_size = 42
+text = "Parabéns!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label Titulo3" type="Label" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_uqtfo")
+theme_override_font_sizes/font_size = 31
+text = "Completado Nível 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6rttb")
+
+[node name="Next Level Button" type="Button" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.147672, 0.147672, 0.147672, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xhmcf")
+theme_override_font_sizes/font_size = 21
+text = "próximo nível"
+flat = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Countdown" type="Label" parent="." groups=["level_start"]]
+visible = false
+offset_left = 71.0
+offset_top = 193.0
+offset_right = 349.0
+offset_bottom = 610.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_hofu3")
+theme_override_font_sizes/font_size = 85
+text = "N"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle1_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
+z_index = 1
+position = Vector2(584, 363)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("8_lc8i2")
+
+[node name="puzzle1_dropabble" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_1"]]
+position = Vector2(582, 403)
+scale = Vector2(0.999998, 1)
+script = ExtResource("10_an8ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_dropabble"]
+shape = SubResource("RectangleShape2D_xhmcf")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle1_dropabble"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -90.0
+offset_right = 54.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle1_piece" type="Node2D" parent="." groups=["puzzle", "puzzle_1"]]
+z_index = 2
+position = Vector2(128, 332)
+script = ExtResource("7_l1o3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle1_piece"]
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("10_4v3ld")
+
+[node name="Area2D" type="Area2D" parent="puzzle1_piece"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_piece/Area2D"]
+shape = SubResource("RectangleShape2D_x6a2d")
+
+[node name="puzzle2_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
+z_index = 1
+position = Vector2(990, 510)
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("12_x6a2d")
+
+[node name="puzzle2_dropabble_1" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_2_piece_1"]]
+position = Vector2(854, 528)
+scale = Vector2(0.999998, 1)
+script = ExtResource("10_an8ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_1"]
+shape = SubResource("RectangleShape2D_p0224")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -119.0
+offset_right = 54.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle2_piece_1" type="Node2D" parent="." groups=["puzzle", "puzzle_2_piece_1"]]
+z_index = 2
+position = Vector2(270, 365)
+script = ExtResource("7_l1o3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle2_piece_1"]
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("11_xhmcf")
+
+[node name="Area2D" type="Area2D" parent="puzzle2_piece_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_piece_1/Area2D"]
+shape = SubResource("RectangleShape2D_5sgqd")
+
+[node name="puzzle2_dropabble_2" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_2_piece_2"]]
+position = Vector2(1145, 531)
+scale = Vector2(0.999998, 1)
+script = ExtResource("10_an8ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_2"]
+shape = SubResource("RectangleShape2D_f8p00")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -110.0
+offset_right = 66.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle2_piece_2" type="Node2D" parent="." groups=["puzzle", "puzzle_2_piece_2"]]
+z_index = 2
+position = Vector2(129, 574)
+script = ExtResource("7_l1o3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle2_piece_2"]
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("12_xhmcf")
+
+[node name="Area2D" type="Area2D" parent="puzzle2_piece_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_piece_2/Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_l1o3i")
+
+[node name="puzzle3_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
+z_index = 1
+position = Vector2(576, 649)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("15_l1o3i")
+
+[node name="puzzle3_dropabble" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_3"]]
+position = Vector2(575.501, 643.5)
+scale = Vector2(0.999998, 1)
+script = ExtResource("10_an8ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_dropabble"]
+shape = SubResource("RectangleShape2D_lc8i2")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle3_dropabble"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -58.0
+offset_right = 43.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle3_piece_1" type="Node2D" parent="." groups=["puzzle", "puzzle_3"]]
+z_index = 2
+position = Vector2(278, 587)
+script = ExtResource("7_l1o3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle3_piece_1"]
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("13_p0224")
+
+[node name="Area2D" type="Area2D" parent="puzzle3_piece_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_piece_1/Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_1o7mx")
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/Next Level Button" to="." method="_on_next_level_button_pressed"]
+[connection signal="body_entered" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle1_piece/Area2D" to="puzzle1_piece" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_mouse_exited"]

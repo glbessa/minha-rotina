@@ -82,7 +82,7 @@ position = Vector2(834, 385)
 scale = Vector2(0.541934, 0.611465)
 texture = ExtResource("3_uq0sc")
 
-[node name="Label Titulo" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
+[node name="Label Puzzle1" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
 offset_left = -693.811
 offset_top = -305.823
 offset_right = -67.8114
@@ -101,7 +101,7 @@ position = Vector2(-378.275, 165.177)
 scale = Vector2(0.43, 0.43)
 texture = ExtResource("5_wpk6a")
 
-[node name="Label Titulo2" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
+[node name="Label Puzzle2" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
 offset_left = 49.8215
 offset_top = -305.823
 offset_right = 675.822
