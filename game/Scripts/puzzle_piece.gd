@@ -8,9 +8,12 @@ var offset: Vector2
 var currentPos: Vector2
 var initialPos: Vector2
 var placed_correctly = false
+var self_puzzle_groups
 
 func _ready():
 	initialPos = global_position
+	var self_groups = self.get_groups()
+	self_puzzle_groups = self_groups.filter(func(group): return group.begins_with("puzzle_"))
 
 func _input(event: InputEvent) -> void:
 	if draggable:
@@ -47,21 +50,21 @@ func _on_tween_finished():
 		if is_same_puzzle_group(body_ref):
 			if !placed_correctly:
 				# New correct placement
-				get_tree().current_scene.add_correct_placement()
+				get_tree().current_scene.add_correct_placement(self_puzzle_groups[0])
 				placed_correctly = true
-				print("added correct placement")
+				print("added correct placement for: ", self_puzzle_groups[0])
 			# If already placed correctly, do nothing (it's the same droppable)
 		elif placed_correctly:
 			# Moved to wrong droppable
 			placed_correctly = false
-			get_tree().current_scene.sub_correct_placement()
-			print("removed correct placement (new wrong droppable)")
+			get_tree().current_scene.sub_correct_placement(self_puzzle_groups[0])
+			print("removed correct placement (new wrong droppable) for: ", self_puzzle_groups[0])
 	else:
 		if placed_correctly:
 			# Returned to initial position
 			placed_correctly = false
-			get_tree().current_scene.sub_correct_placement()
-			print("removed correct placement (original pos)")
+			get_tree().current_scene.sub_correct_placement(self_puzzle_groups[0])
+			print("removed correct placement (original pos) for: ", self_puzzle_groups[0])
 
 func _on_area_2d_mouse_entered() -> void:
 	if not is_dragging:
@@ -95,7 +98,6 @@ func is_same_puzzle_group(bodyref: Node2D) -> bool:
 	var body_ref_groups = bodyref.get_groups()
 	
 	# Filter groups that start with "puzzle_"
-	var self_puzzle_groups = self_groups.filter(func(group): return group.begins_with("puzzle_"))
 	var body_ref_puzzle_groups = body_ref_groups.filter(func(group): return group.begins_with("puzzle_"))
 	
 	# Compare the filtered puzzle groups

@@ -6,6 +6,7 @@ var correct_placement = 0
 var total_puzzle_pieces = 0
 var level_ended = false
 var finished_count = false
+var completed_pieces = []
 
 func _ready():
 	timer = $Timer
@@ -40,7 +41,6 @@ func _ready():
 
 func _process(delta):
 	update_countdown()
-	
 	if correct_placement == total_puzzle_pieces and !level_ended and finished_count:
 		hide_group("puzzle")
 		hide_group("level_start")
@@ -68,11 +68,17 @@ func hide_group(group_name: String):
 func update_countdown():
 	countdown.text = str(int(ceil(timer.time_left)))
 	
-func add_correct_placement():
-	correct_placement = correct_placement + 1;
-	
-func sub_correct_placement():
-	correct_placement = correct_placement - 1;
+func add_correct_placement(group_name: String):
+	if group_name not in completed_pieces:
+		completed_pieces.append(group_name)
+		correct_placement += 1
+		print("list of completed pieces: ",completed_pieces)
+
+func sub_correct_placement(group_name: String):
+	if group_name in completed_pieces:
+		completed_pieces.erase(group_name)
+		correct_placement -= 1
+		print("list of completed pieces: ",completed_pieces)
 	
 func _on_next_level_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://menu_inicial.tscn")
