@@ -43,18 +43,22 @@ func _input(event: InputEvent) -> void:
 		global_position = get_global_mouse_position() - offset
 
 func _on_tween_finished():
-	# This function is called when the tween animation finishes
 	if is_inside_droppable and body_ref:
-		if is_same_puzzle_group(body_ref) and !placed_correctly:
-			get_tree().current_scene.add_correct_placement()
-			placed_correctly = true
-			print("added correct placement")
+		if is_same_puzzle_group(body_ref):
+			if !placed_correctly:
+				# New correct placement
+				get_tree().current_scene.add_correct_placement()
+				placed_correctly = true
+				print("added correct placement")
+			# If already placed correctly, do nothing (it's the same droppable)
 		elif placed_correctly:
+			# Moved to wrong droppable
 			placed_correctly = false
 			get_tree().current_scene.sub_correct_placement()
 			print("removed correct placement (new wrong droppable)")
 	else:
 		if placed_correctly:
+			# Returned to initial position
 			placed_correctly = false
 			get_tree().current_scene.sub_correct_placement()
 			print("removed correct placement (original pos)")

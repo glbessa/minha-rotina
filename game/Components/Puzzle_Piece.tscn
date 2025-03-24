@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://l4wsxv4eq838"]
 
 [ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="1_5sgqd"]
-[ext_resource type="Texture2D" uid="uid://drvvf6dtnfifc" path="res://Components/Placeholder.webp" id="2_5sgqd"]
+[ext_resource type="Texture2D" uid="uid://bg15iryentdvy" path="res://Components/Placeholder.webp" id="2_5sgqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sgqd"]
 size = Vector2(360, 360)

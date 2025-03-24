@@ -1,17 +1,17 @@
 [gd_scene load_steps=23 format=3 uid="uid://cpqbryn4iw6sk"]
 
-[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="1_43ny2"]
-[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="1_ka50d"]
+[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="1_43ny2"]
+[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="1_ka50d"]
 [ext_resource type="Script" uid="uid://bky80kxdkgkls" path="res://Levels/level_1.gd" id="1_uq0sc"]
-[ext_resource type="Texture2D" uid="uid://bnq2ujolwq1di" path="res://Backgrounds/house_background.png" id="3_uq0sc"]
-[ext_resource type="Texture2D" uid="uid://8k3md3fyfgs0" path="res://Images/background/comecando_dia_1_bg.png" id="4_x75k1"]
-[ext_resource type="Texture2D" uid="uid://bsybc8re3y7i5" path="res://Images/full/comecando_dia_1.png" id="5_wpk6a"]
+[ext_resource type="Texture2D" uid="uid://bjmqxjk1gm7av" path="res://Backgrounds/house_background.png" id="3_uq0sc"]
+[ext_resource type="Texture2D" uid="uid://dbkcj4cxbqp6u" path="res://Images/background/comecando_dia_1_bg.png" id="4_x75k1"]
+[ext_resource type="Texture2D" uid="uid://y1s87w8cqawn" path="res://Images/full/comecando_dia_1.png" id="5_wpk6a"]
 [ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="5_x75k1"]
-[ext_resource type="Texture2D" uid="uid://cd6p8211ccg7m" path="res://Images/full/comecando_dia_2.png" id="6_c1kre"]
-[ext_resource type="Texture2D" uid="uid://rdhvst24rc8v" path="res://Images/background/comecando_dia_2_bg.png" id="7_hofu3"]
-[ext_resource type="Texture2D" uid="uid://bi0uyvoblsm6u" path="res://Images/pieces/comecando_dia_2_piece_1.png" id="11_23710"]
+[ext_resource type="Texture2D" uid="uid://yrbvlhwjomhi" path="res://Images/full/comecando_dia_2.png" id="6_c1kre"]
+[ext_resource type="Texture2D" uid="uid://btsu0eurgd5u5" path="res://Images/background/comecando_dia_2_bg.png" id="7_hofu3"]
+[ext_resource type="Texture2D" uid="uid://delavj238s68o" path="res://Images/pieces/comecando_dia_2_piece_1.png" id="11_23710"]
 [ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="11_c1kre"]
-[ext_resource type="Texture2D" uid="uid://5efnhhj262lo" path="res://Images/pieces/comecando_dia_1_piece_1.png" id="12_hofu3"]
+[ext_resource type="Texture2D" uid="uid://cfvi3tqy7gi8a" path="res://Images/pieces/comecando_dia_1_piece_1.png" id="12_hofu3"]
 
 [sub_resource type="FontVariation" id="FontVariation_23710"]
 base_font = ExtResource("1_43ny2")
@@ -189,7 +189,6 @@ text = "próximo nível"
 flat = true
 
 [node name="puzzle1_piece" type="Node2D" parent="." groups=["puzzle", "puzzle_1"]]
-visible = false
 z_index = 2
 position = Vector2(200, 600)
 script = ExtResource("11_c1kre")
@@ -232,7 +231,6 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="puzzle2_piece" type="Node2D" parent="." groups=["puzzle", "puzzle_2"]]
-visible = false
 z_index = 2
 position = Vector2(205, 267)
 script = ExtResource("11_c1kre")
@@ -278,7 +276,6 @@ color = Color(1, 1, 1, 0)
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Countdown" type="Label" parent="." groups=["level_start"]]
-visible = false
 offset_left = 71.0
 offset_top = 193.0
 offset_right = 349.0
