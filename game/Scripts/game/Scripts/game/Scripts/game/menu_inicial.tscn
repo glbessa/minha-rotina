@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3tfwboodjqrs"]
+
+[ext_resource type="FontFile" uid="uid://tkjdi4l7xlot" path="res://Fonts/RAVIE.TTF" id="1_5a6yv"]
+[ext_resource type="Script" uid="uid://b54v2gs65p5is" path="res://Scripts/menu_inicial.gd" id="1_ktf6r"]
+[ext_resource type="Texture2D" uid="uid://i4l1csv2gtex" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
+[ext_resource type="Texture2D" uid="uid://t6n786f64neo" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
+[ext_resource type="Texture2D" uid="uid://cxcuqn1xvakcg" path="res://Backgrounds/background.png" id="4_awogh"]
+[ext_resource type="Texture2D" uid="uid://dqlhyjj3nlwtv" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
+
+[sub_resource type="FontVariation" id="FontVariation_w0vso"]
+base_font = ExtResource("1_5a6yv")
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_ktf6r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 330.0
+offset_top = 130.0
+offset_right = 1072.0
+offset_bottom = 572.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_font_sizes/font_size = 100
+text = "Minha
+Rotina"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button_Jogar" type="TouchScreenButton" parent="."]
+position = Vector2(540, 551)
+scale = Vector2(0.514851, 0.549576)
+texture_normal = ExtResource("2_kb4sh")
+
+[node name="Button_Options" type="TouchScreenButton" parent="."]
+position = Vector2(1210, 3)
+scale = Vector2(0.313008, 0.335664)
+texture_normal = ExtResource("3_te1wd")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(687.5, 385)
+scale = Vector2(5.11808, 4.35556)
+texture = ExtResource("4_awogh")
+
+[node name="Rainbow" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(677, 395)
+scale = Vector2(2.18211, 1.92962)
+texture = ExtResource("5_ukajr")
+
+[connection signal="pressed" from="Button_Jogar" to="." method="_on_button_jogar_pressed"]
+[connection signal="pressed" from="Button_Options" to="." method="_on_button_options_pressed"]

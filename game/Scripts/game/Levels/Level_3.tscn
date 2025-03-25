@@ -1,0 +1,470 @@
+[gd_scene load_steps=35 format=3 uid="uid://dpkmctgla1k24"]
+
+[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="1_c0thm"]
+[ext_resource type="Script" uid="uid://camyhr1mfu3t3" path="res://Levels/level_3.gd" id="1_v1481"]
+[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="2_fwchg"]
+[ext_resource type="Texture2D" uid="uid://bjmqxjk1gm7av" path="res://Backgrounds/house_background.png" id="3_4t04n"]
+[ext_resource type="Texture2D" uid="uid://d2ycydgyqsqjl" path="res://Images/full/tarde_1.png" id="4_knaiw"]
+[ext_resource type="Texture2D" uid="uid://c34stccd1yf1q" path="res://Images/full/tarde_2.png" id="5_vkhu4"]
+[ext_resource type="Texture2D" uid="uid://1lx1khos00p6" path="res://Images/full/tarde_3.png" id="6_y58m1"]
+[ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="7_46jcg"]
+[ext_resource type="Texture2D" uid="uid://tegkcjila3" path="res://Images/background/tarde_1_bg.png" id="8_5i5cj"]
+[ext_resource type="Texture2D" uid="uid://jwg0qpi5mtqf" path="res://Images/background/tarde_3_bg.png" id="10_b7oya"]
+[ext_resource type="Texture2D" uid="uid://h6b8mmbqldit" path="res://Images/background/tarde_2_bg.png" id="11_pcetg"]
+[ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="12_vq0cm"]
+[ext_resource type="Texture2D" uid="uid://co6dbaoaepdys" path="res://Images/pieces/tarde_1_piece_1.png" id="13_ljt6e"]
+[ext_resource type="Texture2D" uid="uid://bm6qqmkaf5jvy" path="res://Images/pieces/tarde_2_piece_1.png" id="14_7ybrn"]
+[ext_resource type="Texture2D" uid="uid://ce28ch02pl8jh" path="res://Images/pieces/tarde_2_piece_2.png" id="15_rbrc7"]
+[ext_resource type="Texture2D" uid="uid://bp6bta4hlekj3" path="res://Images/pieces/tarde_3_piece_1.png" id="16_awy6g"]
+[ext_resource type="Texture2D" uid="uid://docyr8yi0sjyu" path="res://Images/pieces/tarde_3_piece_2.png" id="17_vru53"]
+
+[sub_resource type="FontVariation" id="FontVariation_owrw6"]
+base_font = ExtResource("1_c0thm")
+
+[sub_resource type="FontVariation" id="FontVariation_v1481"]
+base_font = ExtResource("1_c0thm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i5cj"]
+bg_color = Color(0.709804, 0.584314, 0.768627, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="FontVariation" id="FontVariation_b7oya"]
+base_font = ExtResource("1_c0thm")
+
+[sub_resource type="FontVariation" id="FontVariation_pcetg"]
+base_font = ExtResource("1_c0thm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq0cm"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="FontVariation" id="FontVariation_ljt6e"]
+base_font = ExtResource("1_c0thm")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pje3"]
+size = Vector2(93, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ybrn"]
+size = Vector2(94.0001, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5g03"]
+size = Vector2(90, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vru53"]
+size = Vector2(90.0001, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiagw"]
+size = Vector2(87, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khuxi"]
+size = Vector2(87.0002, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f84o"]
+size = Vector2(124, 346)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbrc7"]
+size = Vector2(124, 346)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a42fy"]
+size = Vector2(146, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awy6g"]
+size = Vector2(146, 246)
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_v1481")
+
+[node name="Label Titulo" type="Label" parent="."]
+offset_left = 525.0
+offset_top = 45.0
+offset_right = 1151.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_owrw6")
+theme_override_font_sizes/font_size = 35
+text = "Tarde"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(687.5, 385)
+scale = Vector2(5.11808, 4.35556)
+texture = ExtResource("2_fwchg")
+
+[node name="House" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(834, 385)
+scale = Vector2(0.541934, 0.611465)
+texture = ExtResource("3_4t04n")
+
+[node name="Label Puzzle1" type="Label" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 480.0
+offset_top = 190.0
+offset_right = 756.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_v1481")
+theme_override_font_sizes/font_size = 18
+text = "Almoçando"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+position = Vector2(618, 351)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("4_knaiw")
+
+[node name="Label Puzzle2" type="Label" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 869.0
+offset_top = 257.0
+offset_right = 1140.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_v1481")
+theme_override_font_sizes/font_size = 18
+text = "Voltando para casa"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle2_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+position = Vector2(621, 628)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("5_vkhu4")
+
+[node name="Label Puzzle3" type="Label" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 479.0
+offset_top = 463.0
+offset_right = 762.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_v1481")
+theme_override_font_sizes/font_size = 18
+text = "Brincando no RECREIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle3_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+position = Vector2(1010, 506)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_y58m1")
+
+[node name="PanelContainer" type="PanelContainer" parent="ParallaxBackground/ParallaxLayer" groups=["level_end"]]
+visible = false
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.301
+anchor_right = 0.275
+anchor_bottom = 0.947
+offset_left = 28.0
+offset_top = 222.0
+offset_right = 384.0
+offset_bottom = 736.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5i5cj")
+
+[node name="MarginContainer" type="MarginContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 53
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label Titulo2" type="Label" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_b7oya")
+theme_override_font_sizes/font_size = 42
+text = "Parabéns!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label Titulo3" type="Label" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_pcetg")
+theme_override_font_sizes/font_size = 31
+text = "Completado Nível 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vq0cm")
+
+[node name="Next Level Button" type="Button" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.147672, 0.147672, 0.147672, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_c0thm")
+theme_override_font_sizes/font_size = 21
+text = "próximo nível"
+flat = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Countdown" type="Label" parent="." groups=["level_start"]]
+visible = false
+offset_left = 71.0
+offset_top = 193.0
+offset_right = 349.0
+offset_bottom = 610.0
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_ljt6e")
+theme_override_font_sizes/font_size = 85
+text = "N"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="puzzle1_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
+z_index = 1
+position = Vector2(618, 351)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("8_5i5cj")
+
+[node name="puzzle1_piece_1" type="Node2D" parent="." groups=["puzzle", "puzzle_1"]]
+z_index = 2
+position = Vector2(251, 375)
+script = ExtResource("12_vq0cm")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle1_piece_1"]
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("13_ljt6e")
+
+[node name="Area2D" type="Area2D" parent="puzzle1_piece_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_piece_1/Area2D"]
+shape = SubResource("RectangleShape2D_0pje3")
+
+[node name="puzzle1_dropabble" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_1"]]
+position = Vector2(619.001, 375)
+scale = Vector2(0.999998, 1)
+script = ExtResource("7_46jcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_dropabble"]
+shape = SubResource("RectangleShape2D_7ybrn")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle1_dropabble"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0011
+offset_top = -79.0
+offset_right = 77.9989
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle2_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
+z_index = 1
+position = Vector2(1010, 506)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("10_b7oya")
+
+[node name="puzzle2_piece_1" type="Node2D" parent="." groups=["puzzle", "puzzle_2_piece_1"]]
+z_index = 2
+position = Vector2(76, 604)
+script = ExtResource("12_vq0cm")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle2_piece_1"]
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("14_7ybrn")
+
+[node name="Area2D" type="Area2D" parent="puzzle2_piece_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_piece_1/Area2D"]
+shape = SubResource("RectangleShape2D_k5g03")
+
+[node name="puzzle2_dropabble_1" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_2_piece_1"]]
+position = Vector2(506.001, 647)
+scale = Vector2(0.999998, 1)
+script = ExtResource("7_46jcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_1"]
+shape = SubResource("RectangleShape2D_vru53")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -92.0
+offset_right = 47.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle2_piece_2" type="Node2D" parent="." groups=["puzzle", "puzzle_2_piece_2"]]
+z_index = 2
+position = Vector2(236, 184)
+script = ExtResource("12_vq0cm")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle2_piece_2"]
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("15_rbrc7")
+
+[node name="Area2D" type="Area2D" parent="puzzle2_piece_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_piece_2/Area2D"]
+shape = SubResource("RectangleShape2D_kiagw")
+
+[node name="puzzle2_dropabble_2" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_2_piece_2"]]
+position = Vector2(731.501, 664)
+scale = Vector2(0.999998, 1)
+script = ExtResource("7_46jcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_2"]
+shape = SubResource("RectangleShape2D_khuxi")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -76.0
+offset_right = 47.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle3_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
+z_index = 1
+position = Vector2(621, 628)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("11_pcetg")
+
+[node name="puzzle3_piece_1" type="Node2D" parent="." groups=["puzzle", "puzzle_3_piece_1"]]
+z_index = 2
+position = Vector2(87, 279)
+script = ExtResource("12_vq0cm")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle3_piece_1"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("16_awy6g")
+
+[node name="Area2D" type="Area2D" parent="puzzle3_piece_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_piece_1/Area2D"]
+shape = SubResource("RectangleShape2D_2f84o")
+
+[node name="puzzle3_dropabble_1" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_3_piece_1"]]
+position = Vector2(948.002, 539)
+scale = Vector2(0.999998, 1)
+script = ExtResource("7_46jcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_dropabble_1"]
+shape = SubResource("RectangleShape2D_rbrc7")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle3_dropabble_1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -187.0
+offset_right = 62.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="puzzle3_piece_2" type="Node2D" parent="." groups=["puzzle", "puzzle_3_piece_2"]]
+z_index = 2
+position = Vector2(253, 622)
+script = ExtResource("12_vq0cm")
+
+[node name="Sprite2D" type="Sprite2D" parent="puzzle3_piece_2"]
+position = Vector2(-5, 0)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("17_vru53")
+
+[node name="Area2D" type="Area2D" parent="puzzle3_piece_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_piece_2/Area2D"]
+shape = SubResource("RectangleShape2D_a42fy")
+
+[node name="puzzle3_dropabble_2" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_3_piece_2"]]
+position = Vector2(1083, 589)
+scale = Vector2(0.999998, 1)
+script = ExtResource("7_46jcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_dropabble_2"]
+shape = SubResource("RectangleShape2D_awy6g")
+
+[node name="ColorRect" type="ColorRect" parent="puzzle3_dropabble_2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -129.0
+offset_right = 76.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer/Next Level Button" to="." method="_on_next_level_button_pressed"]
+[connection signal="body_entered" from="puzzle1_piece_1/Area2D" to="puzzle1_piece_1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle1_piece_1/Area2D" to="puzzle1_piece_1" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle1_piece_1/Area2D" to="puzzle1_piece_1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle1_piece_1/Area2D" to="puzzle1_piece_1" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle2_piece_1/Area2D" to="puzzle2_piece_1" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle2_piece_2/Area2D" to="puzzle2_piece_2" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle3_piece_1/Area2D" to="puzzle3_piece_1" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="puzzle3_piece_2/Area2D" to="puzzle3_piece_2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="puzzle3_piece_2/Area2D" to="puzzle3_piece_2" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="puzzle3_piece_2/Area2D" to="puzzle3_piece_2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="puzzle3_piece_2/Area2D" to="puzzle3_piece_2" method="_on_area_2d_mouse_exited"]
