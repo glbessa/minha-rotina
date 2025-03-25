@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://b3tfwboodjqrs"]
 
-[ext_resource type="FontFile" uid="uid://ciexlwi0f5lfl" path="res://Fonts/RAVIE.TTF" id="1_5a6yv"]
+[ext_resource type="FontFile" uid="uid://bp1s25uafqtbw" path="res://Fonts/RAVIE.TTF" id="1_5a6yv"]
 [ext_resource type="Script" uid="uid://b54v2gs65p5is" path="res://Scripts/menu_inicial.gd" id="1_ktf6r"]
-[ext_resource type="Texture2D" uid="uid://c06jgkffpj2fc" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
-[ext_resource type="Texture2D" uid="uid://danek2aam2rdx" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
-[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="4_awogh"]
-[ext_resource type="Texture2D" uid="uid://dil155of6u2x1" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
+[ext_resource type="Texture2D" uid="uid://b3p5dy7sc3p88" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
+[ext_resource type="Texture2D" uid="uid://4rmoe18q6lfs" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
+[ext_resource type="Texture2D" uid="uid://cku67xyg10mg7" path="res://Backgrounds/background.png" id="4_awogh"]
+[ext_resource type="Texture2D" uid="uid://digstes7wtsc4" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
 
 [sub_resource type="FontVariation" id="FontVariation_w0vso"]
 base_font = ExtResource("1_5a6yv")

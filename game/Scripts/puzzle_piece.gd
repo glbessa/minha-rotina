@@ -1,7 +1,7 @@
 extends Node2D
 
 var draggable = false
-var is_dragging = false  # Local dragging state for each piece
+var is_dragging = false
 var is_inside_droppable = false
 var body_ref
 var offset: Vector2
@@ -19,59 +19,65 @@ func _input(event: InputEvent) -> void:
 	if draggable:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				if not Global.is_dragging:  # Check if no other piece is being dragged
-					Global.is_dragging = true  # Set global dragging state
+				if not Global.is_dragging:
+					Global.is_dragging = true
 					currentPos = global_position
 					offset = get_global_mouse_position() - global_position
-					is_dragging = true  # Local dragging state set to true
-					print("Started Interaction with piece: ",self_puzzle_groups[0])
-					get_tree().current_scene.add_interaction()
+					is_dragging = true
+					print("Started Interaction with piece: ", self_puzzle_groups[0])
 			else:
-				print("Ended Interaction with piece: ",self_puzzle_groups[0])
-				Global.is_dragging = false  # Clear global dragging state when released
-				is_dragging = false  # Local dragging state set to false
+				print("Ended Interaction with piece: ", self_puzzle_groups[0])
+				Global.is_dragging = false
+				is_dragging = false
 				var tween = get_tree().create_tween()
 				
 				if is_inside_droppable and body_ref:
-					# Snap to the global position of the most recently entered droppable area
 					tween.tween_property(self, "global_position", body_ref.global_position, 0.2).set_ease(Tween.EASE_OUT)
-					
-					# Connect the tween's finished signal to a function that handles placement logic
 					tween.connect("finished", Callable(self, "_on_tween_finished"), CONNECT_ONE_SHOT)
 				else:
-					# Return to the initial position
 					tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
-					
-					# Connect the tween's finished signal to a function that handles placement logic
 					tween.connect("finished", Callable(self, "_on_tween_finished"), CONNECT_ONE_SHOT)
-	
+				
 	if is_dragging and event is InputEventMouseMotion:
 		global_position = get_global_mouse_position() - offset
 
 func _on_tween_finished():
 	if is_inside_droppable and body_ref:
 		if is_same_puzzle_group(body_ref):
-			if !placed_correctly:
-				# New correct placement
+			if not placed_correctly:
 				get_tree().current_scene.add_correct_placement(self_puzzle_groups[0])
 				placed_correctly = true
 				print("added correct placement for: ", self_puzzle_groups[0])
-			# If already placed correctly, do nothing (it's the same droppable)
 		elif placed_correctly:
-			# Moved to wrong droppable
 			placed_correctly = false
 			get_tree().current_scene.sub_correct_placement(self_puzzle_groups[0])
 			print("removed correct placement (new wrong droppable) for: ", self_puzzle_groups[0])
-			get_tree().current_scene.add_incorrect_placement()
-		else:
-			get_tree().current_scene.add_incorrect_placement()
 	else:
 		if placed_correctly:
-			# Returned to initial position
 			placed_correctly = false
 			get_tree().current_scene.sub_correct_placement(self_puzzle_groups[0])
 			print("removed correct placement (original pos) for: ", self_puzzle_groups[0])
-
+	
+	if not placed_correctly and is_inside_droppable:
+		Global.error_count += 1 
+		print("Erro #", Global.error_count) 
+	if Global.error_count >= 3:
+		print("Você cometeu ", Global.error_count, " erros!")
+		for body in get_tree().get_nodes_in_group("dropable"):
+			body.modulate = Color(1, 1, 1) 
+		
+		# Encontra o corpo correto para o PEDAÇO ATUAL
+		var correct_body: Node2D = null  
+		for body in get_tree().get_nodes_in_group("dropable"):
+			# Verifica se o corpo tem os mesmos grupos de quebra-cabeça que o PEDAÇO ATUAL
+			var body_groups = body.get_groups()
+			var body_puzzle_groups = body_groups.filter(func(group): return group.begins_with("puzzle_"))
+			if body_puzzle_groups == self_puzzle_groups:
+				correct_body = body
+				break  
+		if correct_body != null:
+			correct_body.modulate = Color(0, 1, 0) 
+	
 func _on_area_2d_mouse_entered() -> void:
 	if not is_dragging:
 		draggable = true
@@ -82,29 +88,23 @@ func _on_area_2d_mouse_exited() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group('dropable'):
-		# Update the reference to the last entered area
 		if body_ref != body:
 			is_inside_droppable = true
 			body.modulate = Color(Color.REBECCA_PURPLE, 1)
 			if body_ref:
-				body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)  # Reset the previous area to its original color
-			body_ref = body  # Update to the new body area
+				body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+			body_ref = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group('dropable'):
-		# Only clear the reference if it was the last entered area
 		if body_ref == body:
 			is_inside_droppable = false
 			body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
-			body_ref = null  # Clear the reference
+			body_ref = null
 
 func is_same_puzzle_group(bodyref: Node2D) -> bool:
-	# Get all groups for self and the referenced body
 	var self_groups = self.get_groups()
 	var body_ref_groups = bodyref.get_groups()
-	
-	# Filter groups that start with "puzzle_"
 	var body_ref_puzzle_groups = body_ref_groups.filter(func(group): return group.begins_with("puzzle_"))
 	
-	# Compare the filtered puzzle groups
 	return self_puzzle_groups == body_ref_puzzle_groups
