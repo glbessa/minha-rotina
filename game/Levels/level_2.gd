@@ -79,6 +79,13 @@ func sub_correct_placement(group_name: String):
 		completed_pieces.erase(group_name)
 		correct_placement -= 1
 		print("list of completed pieces: ",completed_pieces)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.pressed:
+			print("Mouse Button Pressed")
+		else:
+			print("Mouse Button Released")
 	
 func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/Level_3.tscn") # TODO: change to next level
+	get_tree().change_scene_to_file("res://Levels/Level_3.tscn")

@@ -24,7 +24,9 @@ func _input(event: InputEvent) -> void:
 					currentPos = global_position
 					offset = get_global_mouse_position() - global_position
 					is_dragging = true  # Local dragging state set to true
+					print("Started Interaction with piece: ",self_puzzle_groups[0])
 			else:
+				print("Ended Interaction with piece: ",self_puzzle_groups[0])
 				Global.is_dragging = false  # Clear global dragging state when released
 				is_dragging = false  # Local dragging state set to false
 				var tween = get_tree().create_tween()

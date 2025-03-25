@@ -96,7 +96,6 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/House" groups=["level_end", "level_start"]]
-visible = false
 position = Vector2(-378.275, 165.177)
 scale = Vector2(0.43, 0.43)
 texture = ExtResource("5_wpk6a")
@@ -121,6 +120,7 @@ scale = Vector2(0.58, 0.58)
 texture = ExtResource("6_c1kre")
 
 [node name="PanelContainer" type="PanelContainer" parent="ParallaxBackground/ParallaxLayer" groups=["level_end"]]
+visible = false
 anchors_preset = -1
 anchor_left = 0.018
 anchor_top = 0.301
@@ -203,12 +203,14 @@ texture = ExtResource("12_hofu3")
 shape = SubResource("RectangleShape2D_wpk6a")
 
 [node name="puzzle1_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
+visible = false
 z_index = 1
 position = Vector2(629, 486)
 scale = Vector2(0.233032, 0.26293)
 texture = ExtResource("4_x75k1")
 
 [node name="puzzle1_dropabble" type="StaticBody2D" parent="." groups=["dropable", "puzzle", "puzzle_1"]]
+visible = false
 position = Vector2(577, 511)
 scale = Vector2(0.999998, 1)
 script = ExtResource("5_x75k1")
@@ -257,6 +259,7 @@ scale = Vector2(0.999998, 1)
 script = ExtResource("5_x75k1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble"]
+visible = false
 shape = SubResource("RectangleShape2D_uqtfo")
 
 [node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble"]
@@ -271,7 +274,7 @@ offset_right = 153.0
 offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(1, 0.411765, 1, 0)
 
 [node name="Timer" type="Timer" parent="."]
 
