@@ -61,6 +61,10 @@ func _on_tween_finished():
 			placed_correctly = false
 			get_tree().current_scene.sub_correct_placement(self_puzzle_groups[0])
 			print("removed correct placement (new wrong droppable) for: ", self_puzzle_groups[0])
+			get_tree().current_scene.add_incorrect_placement()
+		else:
+			get_tree().current_scene.add_incorrect_placement()
+			print("Erro registrado. Número de erros: ", get_tree().current_scene.missplacements)
 	else:
 		if placed_correctly:
 			# Returned to initial position
