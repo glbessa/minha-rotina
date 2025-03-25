@@ -25,6 +25,7 @@ func _input(event: InputEvent) -> void:
 					offset = get_global_mouse_position() - global_position
 					is_dragging = true  # Local dragging state set to true
 					print("Started Interaction with piece: ",self_puzzle_groups[0])
+					get_tree().current_scene.add_interaction()
 			else:
 				print("Ended Interaction with piece: ",self_puzzle_groups[0])
 				Global.is_dragging = false  # Clear global dragging state when released
@@ -43,7 +44,7 @@ func _input(event: InputEvent) -> void:
 					
 					# Connect the tween's finished signal to a function that handles placement logic
 					tween.connect("finished", Callable(self, "_on_tween_finished"), CONNECT_ONE_SHOT)
-				
+	
 	if is_dragging and event is InputEventMouseMotion:
 		global_position = get_global_mouse_position() - offset
 
@@ -64,7 +65,6 @@ func _on_tween_finished():
 			get_tree().current_scene.add_incorrect_placement()
 		else:
 			get_tree().current_scene.add_incorrect_placement()
-			print("Erro registrado. Número de erros: ", get_tree().current_scene.missplacements)
 	else:
 		if placed_correctly:
 			# Returned to initial position

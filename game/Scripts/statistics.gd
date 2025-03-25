@@ -20,4 +20,8 @@ func register_total_time(fase, n):
 
 func register_all_clicks(fase, n):
 	click_data[fase] = n
-	print("Número total de cliques armazenado")
+	print("Número total de cliques armazenado.")
+
+func register_all_interactions(fase, n):
+	interactions_data[fase] = n
+	print("Interações armazenadas.")

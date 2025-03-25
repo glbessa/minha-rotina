@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 MainMusic="*res://Music.tscn"
 Global="*res://Scripts/global.gd"
-Statistics="*res://statistics.gd"
+Statistics="*res://Scripts/statistics.gd"
 
 [display]
 

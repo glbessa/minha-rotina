@@ -7,6 +7,7 @@ var total_correct_placements = 0
 var missplacements = 0
 var all_clicks = 0
 var level_active = false
+var interactions = []
 
 var timer = Timer
 var countdown = Label
@@ -59,7 +60,6 @@ func _process(delta):
 		print("Level completed")
 		level_timer.stop()
 		total_time = (Time.get_ticks_msec() - start_time) / 1000.0  # Converte para segundos
-		print("Tempo total gasto: ", total_time, " segundos")
 		level_active = false
 
 func _on_Timer_timeout():
@@ -115,9 +115,14 @@ func show_hint():
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and level_active:
 		all_clicks += 1
-	
+
+func add_interaction():
+	var current_time = (Time.get_ticks_msec() - start_time) / 1000.0
+	interactions.append(current_time)  # Guarda como string formatada
+
 func _on_next_level_button_pressed() -> void:
-	Statistics.register_click_data(1, all_clicks)
+	Statistics.register_all_clicks(1, all_clicks)
+	Statistics.register_all_interactions(1, interactions)
 	Statistics.register_total_time(1, total_time)
 	Statistics.register_missplacement_error(1, missplacements)
 	Statistics.register_correct_pieces(1, total_correct_placements)
