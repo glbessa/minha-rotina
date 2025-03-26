@@ -1,25 +1,25 @@
 [gd_scene load_steps=34 format=3 uid="uid://d0te8ow5rnmra"]
 
 [ext_resource type="Script" uid="uid://ca3fptmqogj6e" path="res://Levels/level_4.gd" id="1_0xf1t"]
-[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="1_8525h"]
-[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="2_xlqhf"]
-[ext_resource type="Texture2D" uid="uid://bjmqxjk1gm7av" path="res://Backgrounds/house_background.png" id="3_7bqri"]
-[ext_resource type="Texture2D" uid="uid://jiqvaowqm4wb" path="res://Images/full/noite_1.png" id="4_etm6j"]
-[ext_resource type="Texture2D" uid="uid://r770dn62xipf" path="res://Images/full/noite_2.png" id="5_1bjps"]
-[ext_resource type="Texture2D" uid="uid://c08ha010ivoqx" path="res://Images/full/noite_3.png" id="6_8fsqc"]
-[ext_resource type="Texture2D" uid="uid://baaym71x2en2s" path="res://Images/full/noite_4.png" id="7_xqub4"]
+[ext_resource type="FontFile" uid="uid://ciexlwi0f5lfl" path="res://Fonts/RAVIE.TTF" id="1_8525h"]
+[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="2_xlqhf"]
+[ext_resource type="Texture2D" uid="uid://0w5iajgge3lf" path="res://Backgrounds/house_background.png" id="3_7bqri"]
+[ext_resource type="Texture2D" uid="uid://bnt0muk8hdqbw" path="res://Images/full/noite_1.png" id="4_etm6j"]
+[ext_resource type="Texture2D" uid="uid://iw1wh80d4qec" path="res://Images/full/noite_2.png" id="5_1bjps"]
+[ext_resource type="Texture2D" uid="uid://cffopp16kc5yn" path="res://Images/full/noite_3.png" id="6_8fsqc"]
+[ext_resource type="Texture2D" uid="uid://bsxd0wdnc4o5r" path="res://Images/full/noite_4.png" id="7_xqub4"]
 [ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="8_7emau"]
-[ext_resource type="Texture2D" uid="uid://d3f13lvosimh1" path="res://Images/background/noite_1_bg.png" id="10_5pqm8"]
-[ext_resource type="Texture2D" uid="uid://c5l4ch1k32oej" path="res://Images/background/noite_2_bg.png" id="11_f0t86"]
-[ext_resource type="Texture2D" uid="uid://drd81fhqdacjs" path="res://Images/background/noite_3_bg.png" id="12_rocm8"]
-[ext_resource type="Texture2D" uid="uid://cybmd8hwampki" path="res://Images/background/noite_4_bg.png" id="13_gmwyd"]
+[ext_resource type="Texture2D" uid="uid://bt0no3uf3ihxa" path="res://Images/background/noite_1_bg.png" id="10_5pqm8"]
+[ext_resource type="Texture2D" uid="uid://ddwj3t8qnttil" path="res://Images/background/noite_2_bg.png" id="11_f0t86"]
+[ext_resource type="Texture2D" uid="uid://h3qvyuskslr6" path="res://Images/background/noite_3_bg.png" id="12_rocm8"]
+[ext_resource type="Texture2D" uid="uid://ooqmdmmj5hhl" path="res://Images/background/noite_4_bg.png" id="13_gmwyd"]
 [ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="14_nbdlk"]
-[ext_resource type="Texture2D" uid="uid://bmrin7e7xy776" path="res://Images/pieces/noite_1_piece_1.png" id="15_ef48p"]
-[ext_resource type="Texture2D" uid="uid://cx234w7j12mrh" path="res://Images/pieces/noite_1_piece_2.png" id="16_gqkj3"]
-[ext_resource type="Texture2D" uid="uid://c8i7ktpljgunu" path="res://Images/pieces/noite_2_piece_1.png" id="17_veied"]
-[ext_resource type="Texture2D" uid="uid://dunl4h2hefv0x" path="res://Images/pieces/noite_2_piece_2.png" id="18_vsfdw"]
-[ext_resource type="Texture2D" uid="uid://lmutwdul7qaf" path="res://Images/pieces/noite_3_piece_1.png" id="19_buuxg"]
-[ext_resource type="Texture2D" uid="uid://cl0vncl5qnesx" path="res://Images/pieces/noite_4_piece_1.png" id="20_ao5tc"]
+[ext_resource type="Texture2D" uid="uid://b2ldypjumk6h6" path="res://Images/pieces/noite_1_piece_1.png" id="15_ef48p"]
+[ext_resource type="Texture2D" uid="uid://dkqh452nxigtc" path="res://Images/pieces/noite_1_piece_2.png" id="16_gqkj3"]
+[ext_resource type="Texture2D" uid="uid://bhjtfywsvolyl" path="res://Images/pieces/noite_2_piece_1.png" id="17_veied"]
+[ext_resource type="Texture2D" uid="uid://cb5hrirudcrx3" path="res://Images/pieces/noite_2_piece_2.png" id="18_vsfdw"]
+[ext_resource type="Texture2D" uid="uid://bg67c0075dtyl" path="res://Images/pieces/noite_3_piece_1.png" id="19_buuxg"]
+[ext_resource type="Texture2D" uid="uid://ooj34ub20hje" path="res://Images/pieces/noite_4_piece_1.png" id="20_ao5tc"]
 
 [sub_resource type="FontVariation" id="FontVariation_a03si"]
 base_font = ExtResource("1_8525h")
@@ -285,7 +285,7 @@ script = ExtResource("8_7emau")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_dropabble_1"]
 shape = SubResource("RectangleShape2D_rocm8")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle1_dropabble_1"]
+[node name="puzzle_1_piece_1_shadow" type="ColorRect" parent="puzzle1_dropabble_1" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -321,7 +321,7 @@ script = ExtResource("8_7emau")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_dropabble_2"]
 shape = SubResource("RectangleShape2D_gmwyd")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle1_dropabble_2"]
+[node name="puzzle_1_piece_2_shadow" type="ColorRect" parent="puzzle1_dropabble_2" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -363,7 +363,7 @@ script = ExtResource("8_7emau")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_1"]
 shape = SubResource("RectangleShape2D_nbdlk")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_1"]
+[node name="puzzle_2_piece_1_shadow" type="ColorRect" parent="puzzle2_dropabble_1" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -399,7 +399,7 @@ script = ExtResource("8_7emau")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_2"]
 shape = SubResource("RectangleShape2D_ef48p")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_2"]
+[node name="puzzle_2_piece_2_shadow" type="ColorRect" parent="puzzle2_dropabble_2" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -441,7 +441,7 @@ script = ExtResource("8_7emau")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_dropabble"]
 shape = SubResource("RectangleShape2D_gqkj3")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle3_dropabble"]
+[node name="puzzle_3_piece_shadow" type="ColorRect" parent="puzzle3_dropabble" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -483,7 +483,7 @@ script = ExtResource("8_7emau")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle4_dropabble"]
 shape = SubResource("RectangleShape2D_veied")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle4_dropabble"]
+[node name="puzzle_4_piece_shadow" type="ColorRect" parent="puzzle4_dropabble" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Minha Rotina"
-run/main_scene="res://menu_inicial.tscn"
+run/main_scene="res://Menu/menu_inicial.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -38,6 +38,7 @@ dropable=""
 puzzle=""
 level_end=""
 level_start=""
+show_hint2=""
 
 [input_devices]
 

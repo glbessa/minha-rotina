@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj1dk6rsw0p3b"]
 
-[ext_resource type="Script" uid="uid://c0va27yp52a8s" path="res://Scripts/menu_opcoes.gd" id="1_60l56"]
-[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="1_sswwn"]
-[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="4_gqiht"]
-[ext_resource type="Texture2D" uid="uid://ck6tx4jltepr3" path="res://Backgrounds/arco_iris_png.png" id="5_b0m46"]
+[ext_resource type="Script" uid="uid://c0va27yp52a8s" path="res://Scripts/menu_opcoes.gd" id="1_3jdw1"]
+[ext_resource type="FontFile" uid="uid://ciexlwi0f5lfl" path="res://Fonts/RAVIE.TTF" id="2_s3n0l"]
+[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="3_n470h"]
+[ext_resource type="Texture2D" uid="uid://dil155of6u2x1" path="res://Backgrounds/arco_iris_png.png" id="4_r5r71"]
 
 [sub_resource type="FontVariation" id="FontVariation_w0vso"]
-base_font = ExtResource("1_sswwn")
+base_font = ExtResource("2_s3n0l")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nto3o"]
 bg_color = Color(0.709804, 0.584314, 0.768627, 1)
@@ -16,10 +16,10 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="FontVariation" id="FontVariation_60l56"]
-base_font = ExtResource("1_sswwn")
+base_font = ExtResource("2_s3n0l")
 
 [node name="Menu Opcoes" type="Node2D"]
-script = ExtResource("1_60l56")
+script = ExtResource("1_3jdw1")
 
 [node name="Label Titulo" type="Label" parent="."]
 offset_left = 385.0
@@ -42,12 +42,12 @@ uppercase = true
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(687.5, 385)
 scale = Vector2(5.11808, 4.35556)
-texture = ExtResource("4_gqiht")
+texture = ExtResource("3_n470h")
 
 [node name="Rainbow" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(677, 395)
 scale = Vector2(2.18211, 1.92962)
-texture = ExtResource("5_b0m46")
+texture = ExtResource("4_r5r71")
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -64,7 +64,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nto3o")
 [node name="Voltar" type="Button" parent="PanelContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
-theme_override_fonts/font = ExtResource("1_sswwn")
+theme_override_fonts/font = ExtResource("2_s3n0l")
 theme_override_font_sizes/font_size = 28
 text = "Voltar"
 flat = true

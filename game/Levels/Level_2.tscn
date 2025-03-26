@@ -255,7 +255,7 @@ script = ExtResource("10_an8ag")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1_dropabble"]
 shape = SubResource("RectangleShape2D_xhmcf")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle1_dropabble"]
+[node name="puzzle_1_shadow" type="ColorRect" parent="puzzle1_dropabble" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -298,7 +298,7 @@ script = ExtResource("10_an8ag")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_1"]
 shape = SubResource("RectangleShape2D_p0224")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_1"]
+[node name="puzzle_2_piece_1_shadow" type="ColorRect" parent="puzzle2_dropabble_1" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -334,7 +334,7 @@ script = ExtResource("10_an8ag")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle2_dropabble_2"]
 shape = SubResource("RectangleShape2D_f8p00")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle2_dropabble_2"]
+[node name="puzzle_2_piece_2_shadow" type="ColorRect" parent="puzzle2_dropabble_2" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -377,7 +377,7 @@ script = ExtResource("10_an8ag")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle3_dropabble"]
 shape = SubResource("RectangleShape2D_lc8i2")
 
-[node name="ColorRect" type="ColorRect" parent="puzzle3_dropabble"]
+[node name="puzzle_3_shadow" type="ColorRect" parent="puzzle3_dropabble" groups=["shadow"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
