@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj1dk6rsw0p3b"]
 
 [ext_resource type="Script" uid="uid://c0va27yp52a8s" path="res://Scripts/menu_opcoes.gd" id="1_3jdw1"]
-[ext_resource type="FontFile" uid="uid://ciexlwi0f5lfl" path="res://Fonts/RAVIE.TTF" id="2_s3n0l"]
-[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="3_n470h"]
-[ext_resource type="Texture2D" uid="uid://dil155of6u2x1" path="res://Backgrounds/arco_iris_png.png" id="4_r5r71"]
+[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="2_s3n0l"]
+[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="3_n470h"]
+[ext_resource type="Texture2D" uid="uid://briq2yi0pd5ss" path="res://Backgrounds/arco_iris_png.png" id="4_r5r71"]
 
 [sub_resource type="FontVariation" id="FontVariation_w0vso"]
 base_font = ExtResource("2_s3n0l")
@@ -71,10 +71,10 @@ flat = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(0, 80)
-offset_left = 269.0
-offset_top = 163.0
-offset_right = 1152.0
-offset_bottom = 744.0
+offset_left = 139.0
+offset_top = 174.0
+offset_right = 1272.0
+offset_bottom = 755.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nto3o")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -129,7 +129,7 @@ theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_w0vso")
 theme_override_font_sizes/font_size = 20
-text = "Tempo para mostrar as imagens completas no início da fase"
+text = "Tempo para mostrar as imagens completas no início da fase (s)"
 vertical_alignment = 1
 uppercase = true
 
@@ -153,7 +153,71 @@ size_flags_vertical = 1
 max_value = 60.0
 value = 5.0
 
+[node name="Label Hint 1" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_font_sizes/font_size = 20
+text = "Número de erros até colorir o lugar correto das peças (dica 1)"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" groups=["hint1"]]
+layout_mode = 2
+
+[node name="Label Hint 1 Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_60l56")
+theme_override_font_sizes/font_size = 20
+text = "5"
+vertical_alignment = 1
+uppercase = true
+
+[node name="hint1" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 1.0
+max_value = 10.0
+value = 3.0
+
+[node name="Label Hint 2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_font_sizes/font_size = 20
+text = "Tempo para mostrar as imagens completas transparentes (s) (Dica 2)"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" groups=["hint2"]]
+layout_mode = 2
+
+[node name="Label Hint 2 Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_60l56")
+theme_override_font_sizes/font_size = 20
+text = "5"
+vertical_alignment = 1
+uppercase = true
+
+[node name="hint2" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 1.0
+max_value = 30.0
+value = 15.0
+
 [connection signal="pressed" from="PanelContainer2/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/Musica Toggle" to="." method="_on_musica_toggle_toggled"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/delay" to="." method="_on_delay_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/hint1" to="." method="_on_hint_1_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/hint2" to="." method="_on_hint_2_value_changed"]

@@ -28,7 +28,6 @@ func _input(event: InputEvent) -> void:
 					get_tree().current_scene.add_interaction()
 					get_tree().current_scene.enable_hint1(self_puzzle_groups[0])
 			else:
-				get_tree().current_scene.disable_hint1()
 				print("Ended Interaction with piece: ",self_puzzle_groups[0])
 				Global.is_dragging = false  # Clear global dragging state when released
 				is_dragging = false  # Local dragging state set to false

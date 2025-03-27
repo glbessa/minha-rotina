@@ -1,21 +1,21 @@
 [gd_scene load_steps=32 format=3 uid="uid://dwes3batmw05b"]
 
 [ext_resource type="Script" uid="uid://dbpkppttkadar" path="res://Levels/level_2.gd" id="1_lc8i2"]
-[ext_resource type="FontFile" uid="uid://ciexlwi0f5lfl" path="res://Fonts/RAVIE.TTF" id="2_xhmcf"]
-[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="3_p0224"]
-[ext_resource type="Texture2D" uid="uid://0w5iajgge3lf" path="res://Backgrounds/house_background.png" id="4_f8p00"]
-[ext_resource type="Texture2D" uid="uid://cbweh8lirfj3f" path="res://Images/full/manha_1.png" id="5_vb2uo"]
-[ext_resource type="Texture2D" uid="uid://cv64r0jetc0jx" path="res://Images/full/manha_2.png" id="6_dbc5v"]
+[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="2_xhmcf"]
+[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="3_p0224"]
+[ext_resource type="Texture2D" uid="uid://bnq2ujolwq1di" path="res://Backgrounds/house_background.png" id="4_f8p00"]
+[ext_resource type="Texture2D" uid="uid://dpnpashh1kylf" path="res://Images/full/manha_1.png" id="5_vb2uo"]
+[ext_resource type="Texture2D" uid="uid://jwu06uxrrp6q" path="res://Images/full/manha_2.png" id="6_dbc5v"]
 [ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="7_l1o3i"]
-[ext_resource type="Texture2D" uid="uid://nu43csfeaw2f" path="res://Images/full/manha_3.png" id="7_t5q4t"]
-[ext_resource type="Texture2D" uid="uid://dbetnp3r6u43k" path="res://Images/background/manha_1_bg.png" id="8_lc8i2"]
-[ext_resource type="Texture2D" uid="uid://6bipydmfxlbc" path="res://Images/pieces/manha_1_piece_1.png" id="10_4v3ld"]
+[ext_resource type="Texture2D" uid="uid://dwimkb6s3fsep" path="res://Images/full/manha_3.png" id="7_t5q4t"]
+[ext_resource type="Texture2D" uid="uid://cs1a31imukl4q" path="res://Images/background/manha_1_bg.png" id="8_lc8i2"]
+[ext_resource type="Texture2D" uid="uid://drfi7b6abgmk3" path="res://Images/pieces/manha_1_piece_1.png" id="10_4v3ld"]
 [ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="10_an8ag"]
-[ext_resource type="Texture2D" uid="uid://crt6iube6tg4y" path="res://Images/pieces/manha_2_piece_1.png" id="11_xhmcf"]
-[ext_resource type="Texture2D" uid="uid://uxy4pxgj7gm6" path="res://Images/background/manha_2_bg.png" id="12_x6a2d"]
-[ext_resource type="Texture2D" uid="uid://udlnu1spb8xs" path="res://Images/pieces/manha_2_piece_2.png" id="12_xhmcf"]
-[ext_resource type="Texture2D" uid="uid://l7fhdo5b6w8q" path="res://Images/pieces/manha_3_piece_1.png" id="13_p0224"]
-[ext_resource type="Texture2D" uid="uid://cbr44to628dqe" path="res://Images/background/manha_3_bg.png" id="15_l1o3i"]
+[ext_resource type="Texture2D" uid="uid://bcqbnpygoobtl" path="res://Images/pieces/manha_2_piece_1.png" id="11_xhmcf"]
+[ext_resource type="Texture2D" uid="uid://u5kjj0x3uind" path="res://Images/background/manha_2_bg.png" id="12_x6a2d"]
+[ext_resource type="Texture2D" uid="uid://lj14ty2lc6q2" path="res://Images/pieces/manha_2_piece_2.png" id="12_xhmcf"]
+[ext_resource type="Texture2D" uid="uid://ihadiu67c5c5" path="res://Images/pieces/manha_3_piece_1.png" id="13_p0224"]
+[ext_resource type="Texture2D" uid="uid://drx34rctgnkfa" path="res://Images/background/manha_3_bg.png" id="15_l1o3i"]
 
 [sub_resource type="FontVariation" id="FontVariation_23710"]
 base_font = ExtResource("2_xhmcf")
@@ -114,7 +114,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+[node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start", "show_hint2"]]
 position = Vector2(584, 363)
 scale = Vector2(0.265, 0.265)
 texture = ExtResource("5_vb2uo")
@@ -132,7 +132,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="puzzle2_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+[node name="puzzle2_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start", "show_hint2"]]
 position = Vector2(990, 510)
 scale = Vector2(0.167, 0.167)
 texture = ExtResource("6_dbc5v")
@@ -150,7 +150,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="puzzle3_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start"]]
+[node name="puzzle3_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start", "show_hint2"]]
 position = Vector2(576, 649)
 scale = Vector2(0.312, 0.312)
 texture = ExtResource("7_t5q4t")
