@@ -1,26 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3tfwboodjqrs"]
+[gd_scene load_steps=7 format=3 uid="uid://b3tfwboodjqrs"]
 
-[ext_resource type="FontFile" uid="uid://ciexlwi0f5lfl" path="res://Fonts/RAVIE.TTF" id="1_5a6yv"]
 [ext_resource type="Script" uid="uid://b54v2gs65p5is" path="res://Scripts/menu_inicial.gd" id="1_ktf6r"]
+[ext_resource type="FontFile" uid="uid://be8sj6im6edhk" path="res://Fonts/COOPBL.TTF" id="2_af7h5"]
 [ext_resource type="Texture2D" uid="uid://c06jgkffpj2fc" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
 [ext_resource type="Texture2D" uid="uid://danek2aam2rdx" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
 [ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="4_awogh"]
 [ext_resource type="Texture2D" uid="uid://dil155of6u2x1" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
 
-[sub_resource type="FontVariation" id="FontVariation_w0vso"]
-base_font = ExtResource("1_5a6yv")
-
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_ktf6r")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 330.0
+offset_left = 311.0
 offset_top = 130.0
-offset_right = 1072.0
-offset_bottom = 572.0
+offset_right = 1091.0
+offset_bottom = 587.0
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_fonts/font = ExtResource("2_af7h5")
 theme_override_font_sizes/font_size = 100
 text = "Minha
 Rotina"

@@ -1,20 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://cpqbryn4iw6sk"]
+[gd_scene load_steps=21 format=3 uid="uid://cpqbryn4iw6sk"]
 
-[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="1_43ny2"]
-[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="1_ka50d"]
+[ext_resource type="FontFile" uid="uid://ciexlwi0f5lfl" path="res://Fonts/RAVIE.TTF" id="1_43ny2"]
+[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="1_ka50d"]
 [ext_resource type="Script" uid="uid://bky80kxdkgkls" path="res://Levels/level_1.gd" id="1_uq0sc"]
-[ext_resource type="Texture2D" uid="uid://bnq2ujolwq1di" path="res://Backgrounds/house_background.png" id="3_uq0sc"]
-[ext_resource type="Texture2D" uid="uid://8k3md3fyfgs0" path="res://Images/background/comecando_dia_1_bg.png" id="4_x75k1"]
-[ext_resource type="Texture2D" uid="uid://bsybc8re3y7i5" path="res://Images/full/comecando_dia_1.png" id="5_wpk6a"]
+[ext_resource type="FontFile" uid="uid://be8sj6im6edhk" path="res://Fonts/COOPBL.TTF" id="2_23710"]
+[ext_resource type="Texture2D" uid="uid://0w5iajgge3lf" path="res://Backgrounds/house_background.png" id="3_uq0sc"]
+[ext_resource type="Texture2D" uid="uid://cjxl2la4xrltw" path="res://Images/background/comecando_dia_1_bg.png" id="4_x75k1"]
+[ext_resource type="Texture2D" uid="uid://cl51ul6vt2o1b" path="res://Images/full/comecando_dia_1.png" id="5_wpk6a"]
 [ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="5_x75k1"]
-[ext_resource type="Texture2D" uid="uid://cd6p8211ccg7m" path="res://Images/full/comecando_dia_2.png" id="6_c1kre"]
-[ext_resource type="Texture2D" uid="uid://rdhvst24rc8v" path="res://Images/background/comecando_dia_2_bg.png" id="7_hofu3"]
-[ext_resource type="Texture2D" uid="uid://bi0uyvoblsm6u" path="res://Images/pieces/comecando_dia_2_piece_1.png" id="11_23710"]
+[ext_resource type="Texture2D" uid="uid://dochjcri0uj8c" path="res://Images/full/comecando_dia_2.png" id="6_c1kre"]
+[ext_resource type="Texture2D" uid="uid://rx0ucpcfcnhi" path="res://Images/background/comecando_dia_2_bg.png" id="7_hofu3"]
+[ext_resource type="Texture2D" uid="uid://dny5xdd8hj0ay" path="res://Images/pieces/comecando_dia_2_piece_1.png" id="11_23710"]
 [ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="11_c1kre"]
-[ext_resource type="Texture2D" uid="uid://5efnhhj262lo" path="res://Images/pieces/comecando_dia_1_piece_1.png" id="12_hofu3"]
-
-[sub_resource type="FontVariation" id="FontVariation_23710"]
-base_font = ExtResource("1_43ny2")
+[ext_resource type="Texture2D" uid="uid://cqsutc0re6hlw" path="res://Images/pieces/comecando_dia_1_piece_1.png" id="12_hofu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hofu3"]
 bg_color = Color(0.709804, 0.584314, 0.768627, 1)
@@ -22,12 +20,6 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
-
-[sub_resource type="FontVariation" id="FontVariation_nmwl1"]
-base_font = ExtResource("1_43ny2")
-
-[sub_resource type="FontVariation" id="FontVariation_uqtfo"]
-base_font = ExtResource("1_43ny2")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rttb"]
 bg_color = Color(1, 1, 1, 1)
@@ -55,14 +47,13 @@ base_font = ExtResource("1_43ny2")
 script = ExtResource("1_uq0sc")
 
 [node name="Label Titulo" type="Label" parent="."]
-visible = false
 offset_left = 525.0
 offset_top = 45.0
 offset_right = 1151.0
 offset_bottom = 221.0
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_23710")
+theme_override_fonts/font = ExtResource("2_23710")
 theme_override_font_sizes/font_size = 35
 text = "Começando o Dia"
 horizontal_alignment = 1
@@ -84,41 +75,37 @@ scale = Vector2(0.541934, 0.611465)
 texture = ExtResource("3_uq0sc")
 
 [node name="Label Puzzle1" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
-visible = false
 offset_left = -693.811
-offset_top = -305.823
-offset_right = -67.8114
-offset_bottom = -129.823
+offset_top = -287.833
+offset_right = -67.8118
+offset_bottom = -111.833
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_23710")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("2_23710")
+theme_override_font_sizes/font_size = 40
 text = "Levantando da Cama"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
 [node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/House" groups=["level_end", "level_start", "show_hint2"]]
-visible = false
 position = Vector2(-378.275, 165.177)
 scale = Vector2(0.43, 0.43)
 texture = ExtResource("5_wpk6a")
 
 [node name="Label Puzzle2" type="Label" parent="ParallaxBackground/ParallaxLayer/House"]
-visible = false
-offset_left = 49.8215
-offset_top = -305.823
-offset_right = 675.822
-offset_bottom = -129.823
+offset_left = 46.1311
+offset_top = -284.563
+offset_right = 672.132
+offset_bottom = -108.563
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_23710")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("2_23710")
+theme_override_font_sizes/font_size = 40
 text = "Tomar Café da Manhã"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
 [node name="puzzle2_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/House" groups=["level_end", "level_start", "show_hint2"]]
-visible = false
 position = Vector2(356.132, 170.083)
 scale = Vector2(0.58, 0.58)
 texture = ExtResource("6_c1kre")
@@ -145,8 +132,8 @@ layout_mode = 2
 [node name="Label Titulo2" type="Label" parent="ParallaxBackground/ParallaxLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_nmwl1")
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("2_23710")
+theme_override_font_sizes/font_size = 50
 text = "Parabéns!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -157,8 +144,8 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_uqtfo")
-theme_override_font_sizes/font_size = 31
+theme_override_fonts/font = ExtResource("2_23710")
+theme_override_font_sizes/font_size = 40
 text = "Completado Nível 1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -186,9 +173,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_43ny2")
-theme_override_font_sizes/font_size = 21
-text = "próximo nível"
+theme_override_fonts/font = ExtResource("2_23710")
+theme_override_font_sizes/font_size = 30
+text = "Próximo nível"
 flat = true
 
 [node name="puzzle1_piece" type="Node2D" parent="." groups=["puzzle", "puzzle_1"]]

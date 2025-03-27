@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj1dk6rsw0p3b"]
+[gd_scene load_steps=6 format=3 uid="uid://bj1dk6rsw0p3b"]
 
 [ext_resource type="Script" uid="uid://c0va27yp52a8s" path="res://Scripts/menu_opcoes.gd" id="1_3jdw1"]
-[ext_resource type="FontFile" uid="uid://c85m2ddrbtfge" path="res://Fonts/RAVIE.TTF" id="2_s3n0l"]
-[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="3_n470h"]
-[ext_resource type="Texture2D" uid="uid://briq2yi0pd5ss" path="res://Backgrounds/arco_iris_png.png" id="4_r5r71"]
-
-[sub_resource type="FontVariation" id="FontVariation_w0vso"]
-base_font = ExtResource("2_s3n0l")
+[ext_resource type="FontFile" uid="uid://be8sj6im6edhk" path="res://Fonts/COOPBL.TTF" id="2_n470h"]
+[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="3_n470h"]
+[ext_resource type="Texture2D" uid="uid://dil155of6u2x1" path="res://Backgrounds/arco_iris_png.png" id="4_r5r71"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nto3o"]
 bg_color = Color(0.709804, 0.584314, 0.768627, 1)
@@ -15,20 +12,17 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="FontVariation" id="FontVariation_60l56"]
-base_font = ExtResource("2_s3n0l")
-
 [node name="Menu Opcoes" type="Node2D"]
 script = ExtResource("1_3jdw1")
 
 [node name="Label Titulo" type="Label" parent="."]
 offset_left = 385.0
-offset_top = 10.0
+offset_top = -13.0
 offset_right = 1011.0
-offset_bottom = 186.0
+offset_bottom = 163.0
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_w0vso")
+theme_override_fonts/font = ExtResource("2_n470h")
 theme_override_font_sizes/font_size = 100
 text = "Opções"
 horizontal_alignment = 1
@@ -64,17 +58,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nto3o")
 [node name="Voltar" type="Button" parent="PanelContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
-theme_override_fonts/font = ExtResource("2_s3n0l")
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 40
 text = "Voltar"
 flat = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(0, 80)
 offset_left = 139.0
-offset_top = 174.0
+offset_top = 151.0
 offset_right = 1272.0
-offset_bottom = 755.0
+offset_bottom = 732.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nto3o")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -93,8 +87,8 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_w0vso")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 35
 text = "Volume"
 vertical_alignment = 1
 uppercase = true
@@ -109,8 +103,8 @@ max_value = 20.0
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_w0vso")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 35
 text = "Música"
 vertical_alignment = 1
 uppercase = true
@@ -120,6 +114,7 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 5
 button_pressed = true
 vertical_icon_alignment = 0
 
@@ -127,9 +122,9 @@ vertical_icon_alignment = 0
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_w0vso")
-theme_override_font_sizes/font_size = 20
-text = "Tempo para mostrar as imagens completas no início da fase (s)"
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 30
+text = "Tempo para memorizar as imagens"
 vertical_alignment = 1
 uppercase = true
 
@@ -140,8 +135,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_60l56")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 25
 text = "5"
 vertical_alignment = 1
 uppercase = true
@@ -157,9 +152,9 @@ value = 5.0
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_w0vso")
-theme_override_font_sizes/font_size = 20
-text = "Número de erros até colorir o lugar correto das peças (dica 1)"
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 30
+text = "Quantos erros até receber dica"
 vertical_alignment = 1
 uppercase = true
 
@@ -170,8 +165,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_60l56")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 25
 text = "5"
 vertical_alignment = 1
 uppercase = true
@@ -188,9 +183,9 @@ value = 3.0
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_w0vso")
-theme_override_font_sizes/font_size = 20
-text = "Tempo para mostrar as imagens completas transparentes (s) (Dica 2)"
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 30
+text = "Quanto tempo ausente até receber dica"
 vertical_alignment = 1
 uppercase = true
 
@@ -201,8 +196,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_60l56")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 25
 text = "5"
 vertical_alignment = 1
 uppercase = true
