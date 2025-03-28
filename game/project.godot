@@ -26,6 +26,7 @@ Statistics="*res://Scripts/statistics.gd"
 window/size/viewport_width=1366
 window/size/viewport_height=768
 window/size/borderless=true
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=2
 
 [editor]
@@ -47,3 +48,4 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

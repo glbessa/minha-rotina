@@ -209,6 +209,7 @@ func enable_hint1(piece):
 func _input(event: InputEvent) -> void:
 	# Registra cliques durante o nível ativo
 	if event is InputEventMouseButton and event.pressed and level_active:
+		print("Registrado click")
 		all_clicks += 1
 
 func add_interaction():
@@ -225,6 +226,9 @@ func add_interaction():
 		using_hint2 = false
 		for shadow in shadow_nodes:
 			shadow.modulate.a = normal_shadow_opacity  # Volta à opacidade normal
+
+func is_level_active() -> bool:
+	return level_active
 
 func _on_next_level_button_pressed() -> void:
 	Statistics.register_total_time(level_index, total_time)
