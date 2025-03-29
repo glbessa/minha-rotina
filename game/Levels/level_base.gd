@@ -237,4 +237,8 @@ func _on_next_level_button_pressed() -> void:
 	Statistics.register_all_interactions(level_index, interactions)
 	Statistics.register_missplacement_error(level_index, missplacements)
 	Statistics.register_correct_pieces(level_index, total_correct_placements)
+	# No último nível, salva os dados antes de voltar ao menu
+	if level_index == 3:
+		Statistics.save_data_to_xml()
+		
 	get_tree().change_scene_to_file(next_level_scene)

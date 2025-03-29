@@ -55,3 +55,81 @@ func register_all_interactions(fase, n):
 		soma_intervalos += n[i] - n[i - 1]
 	tempo_medio_interactions[fase] = soma_intervalos / (n.size() - 1)
 	print('Tempo médio entre interações registrado.')
+	
+func get_next_user_id(xml_content: String) -> int:
+	var user_id = 1
+	var regex = RegEx.new()
+	regex.compile("<usuario id='(\\d+)'>")
+	var results = regex.search_all(xml_content)
+	
+	if results.size() > 0:
+		var last_id = int(results[-1].get_string(1))
+		user_id = last_id + 1
+	
+	return user_id
+
+func save_data_to_xml():
+	var file_path = "user://game_data.xml"
+	var xml_content = "<?xml version='1.0' encoding='UTF-8'?>\n<game_data>\n"
+
+	# Tenta carregar o XML existente
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file:
+		xml_content = file.get_as_text()
+		file.close()
+
+	# Obtém o próximo ID do usuário
+	var user_id = get_next_user_id(xml_content)
+
+	# Obtém a data e hora atual formatada
+	var datetime = Time.get_datetime_dict_from_system()
+	var formatted_date = "%02d-%02d-%d %02d:%02d:%02d" % [
+		datetime.day, datetime.month, datetime.year,
+		datetime.hour, datetime.minute, datetime.second
+	]
+
+	# Remove a tag de fechamento para adicionar novos dados
+	if "</game_data>" in xml_content:
+		xml_content = xml_content.replace("</game_data>", "")
+
+	# Adiciona um novo usuário ao XML
+	xml_content += "  <usuario id='%d'>\n" % user_id
+	xml_content += "      <data>%s</data>\n" % formatted_date
+
+	for i in range(4):  # Supondo que existam 4 fases
+		xml_content += "      <fase id='%d'>\n" % (i + 1)
+		xml_content += "        <pecas_corretas>%d</pecas_corretas>\n" % counter_correct_pieces[i]
+		xml_content += "        <erro_colocacao>%d</erro_colocacao>\n" % counter_missplacement_error[i]
+		xml_content += "        <tempo_total>%d</tempo_total>\n" % total_time[i]
+		xml_content += "        <cliques>%d</cliques>\n" % click_data[i]
+		xml_content += "        <dicas1_usadas>%d</dicas1_usadas>\n" % hint1_used[i]
+		xml_content += "        <dicas2_usadas>%d</dicas2_usadas>\n" % hint2_used[i]
+		xml_content += "        <tempo_medio_entre_acertos>%.2f</tempo_medio_entre_acertos>\n" % tempo_medio_entre_acertos[i]
+		xml_content += "        <tempo_medio_entre_erros>%.2f</tempo_medio_entre_erros>\n" % tempo_medio_entre_erros[i]
+		xml_content += "        <tempo_ate_primeira_interacao>%.2f</tempo_ate_primeira_interacao>\n" % tempo_ate_primeira_interacao[i]
+		xml_content += "        <tempo_medio_clicks>%.2f</tempo_medio_clicks>\n" % tempo_medio_clicks[i]
+		xml_content += "        <tempo_medio_interactions>%.2f</tempo_medio_interactions>\n" % tempo_medio_interactions[i]
+		xml_content += "        <interacoes>%s</interacoes>\n" % str(interactions_data)
+		
+
+		xml_content += "      </fase>\n"
+
+	xml_content += "  </usuario>\n"
+	xml_content += "</game_data>\n"
+
+	# Salva o XML atualizado
+	file = FileAccess.open(file_path, FileAccess.WRITE)
+	if file:
+		file.store_string(xml_content)
+		file.close()
+		print("Dados salvos com sucesso!")
+		print("Arquivo salvo em: ", OS.get_user_data_dir() + "/game_data.xml")
+		
+func reset_xml():
+	var file_path = "user://game_data.xml"
+	var xml_content = "<?xml version='1.0' encoding='UTF-8'?>\n<game_data>\n</game_data>\n"
+	var file = FileAccess.open(file_path, FileAccess.WRITE)
+	if file:
+		file.store_string(xml_content)
+		file.close()
+		print("XML resetado com sucesso!")		
