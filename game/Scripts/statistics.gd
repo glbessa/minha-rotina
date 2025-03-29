@@ -69,15 +69,16 @@ func get_next_user_id(xml_content: String) -> int:
 	return user_id
 
 func save_data_to_xml():
-	var file_path = "user://game_data.xml"
 	var xml_content = "<?xml version='1.0' encoding='UTF-8'?>\n<game_data>\n"
 
 	# Tenta carregar o XML existente
-	var file = FileAccess.open(file_path, FileAccess.READ)
+	var file = FileAccess.open(Global.save_path, FileAccess.READ)
 	if file:
 		xml_content = file.get_as_text()
 		file.close()
-
+		
+	if xml_content.strip_edges() == "" or not xml_content.contains("<game_data>"):
+		xml_content = "<?xml version='1.0' encoding='UTF-8'?>\n<game_data>\n</game_data>\n"
 	# Obtém o próximo ID do usuário
 	var user_id = get_next_user_id(xml_content)
 
@@ -118,15 +119,15 @@ func save_data_to_xml():
 	xml_content += "</game_data>\n"
 
 	# Salva o XML atualizado
-	file = FileAccess.open(file_path, FileAccess.WRITE)
+	file = FileAccess.open(Global.save_path, FileAccess.WRITE)
 	if file:
 		file.store_string(xml_content)
 		file.close()
 		print("Dados salvos com sucesso!")
-		print("Arquivo salvo em: ", OS.get_user_data_dir() + "/game_data.xml")
+		print("Arquivo salvo em: ", Global.save_path)
 		
 func reset_xml():
-	var file_path = "user://game_data.xml"
+	var file_path = Global.save_path
 	var xml_content = "<?xml version='1.0' encoding='UTF-8'?>\n<game_data>\n</game_data>\n"
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	if file:

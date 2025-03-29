@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bj1dk6rsw0p3b"]
 
 [ext_resource type="Script" uid="uid://c0va27yp52a8s" path="res://Scripts/menu_opcoes.gd" id="1_3jdw1"]
-[ext_resource type="FontFile" uid="uid://dlgx84ilblh58" path="res://Fonts/COOPBL.TTF" id="2_n470h"]
-[ext_resource type="Texture2D" uid="uid://5g2ke4di8e2o" path="res://Backgrounds/background.png" id="3_n470h"]
-[ext_resource type="Texture2D" uid="uid://briq2yi0pd5ss" path="res://Backgrounds/arco_iris_png.png" id="4_r5r71"]
+[ext_resource type="FontFile" uid="uid://dn7o44amkqfcd" path="res://Fonts/COOPBL.TTF" id="2_n470h"]
+[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="3_n470h"]
+[ext_resource type="Texture2D" uid="uid://ck6tx4jltepr3" path="res://Backgrounds/arco_iris_png.png" id="4_r5r71"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nto3o"]
 bg_color = Color(0.709804, 0.584314, 0.768627, 1)
@@ -77,18 +77,19 @@ layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 16
 
 [node name="Label Volume" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_fonts/font = ExtResource("2_n470h")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "Volume"
 vertical_alignment = 1
 uppercase = true
@@ -104,7 +105,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n470h")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "Música"
 vertical_alignment = 1
 uppercase = true
@@ -123,7 +124,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n470h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Tempo para memorizar as imagens"
 vertical_alignment = 1
 uppercase = true
@@ -153,7 +154,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n470h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Quantos erros até receber dica"
 vertical_alignment = 1
 uppercase = true
@@ -184,7 +185,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n470h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Quanto tempo ausente até receber dica"
 vertical_alignment = 1
 uppercase = true
@@ -210,9 +211,24 @@ min_value = 1.0
 max_value = 30.0
 value = 15.0
 
+[node name="Label Filepath" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" groups=["filepath"]]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.427451, 0.247059, 0, 1)
+theme_override_fonts/font = ExtResource("2_n470h")
+theme_override_font_sizes/font_size = 30
+text = "Arquivo XML"
+vertical_alignment = 1
+uppercase = true
+
+[node name="SelectPathButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" groups=["filepath"]]
+layout_mode = 2
+text = "Escolher Caminho"
+
 [connection signal="pressed" from="PanelContainer2/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/Musica Toggle" to="." method="_on_musica_toggle_toggled"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/delay" to="." method="_on_delay_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/hint1" to="." method="_on_hint_1_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/hint2" to="." method="_on_hint_2_value_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/SelectPathButton" to="." method="_on_select_path_button_pressed"]
