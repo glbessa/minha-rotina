@@ -12,6 +12,11 @@ var tempo_medio_entre_erros = [0.0, 0.0, 0.0, 0.0]
 var tempo_ate_primeira_interacao = [0.0, 0.0, 0.0, 0.0]
 var tempo_medio_clicks = [0.0, 0.0, 0.0, 0.0]
 var tempo_medio_interactions = [0.0, 0.0, 0.0, 0.0]
+var tempo_ocioso = [0.0, 0.0, 0.0, 0.0] 
+var tempo_medio_ocioso = [0.0, 0.0, 0.0, 0.0]  
+var maior_sequencia_erros = [0, 0, 0, 0]
+var erros_seguidos_atual = [0, 0, 0, 0]
+
 
 func register_hints(fase, n, m):
 	hint1_used[fase] = n
@@ -25,12 +30,33 @@ func register_correct_pieces(fase, n):
 	tempo_medio_entre_acertos[fase] = total_time[fase] / counter_correct_pieces[fase]
 	print('Tempo médio entre acertos armazenado.')
 
-func register_missplacement_error(fase, n):
+func register_missplacement_error(fase, n, acertou):
 	counter_missplacement_error[fase] = n
 	print("Número de missplacement errors armazenado.")
 
-	tempo_medio_entre_erros[fase] = total_time[fase] / counter_missplacement_error[fase]
+	# Atualiza tempo médio entre erros
+	if counter_missplacement_error[fase] > 0:
+		tempo_medio_entre_erros[fase] = total_time[fase] / counter_missplacement_error[fase]
+	else:
+		tempo_medio_entre_erros[fase] = 0.0
+
 	print('Tempo médio entre erros armazenado.')
+
+	# Atualiza sequência de erros consecutivos
+	if acertou:  
+		# Se o jogador acertou, verifica se a sequência atual foi a maior e reseta a contagem
+		if erros_seguidos_atual[fase] > maior_sequencia_erros[fase]:
+			maior_sequencia_erros[fase] = erros_seguidos_atual[fase]
+		erros_seguidos_atual[fase] = 0  # Reinicia a contagem de erros consecutivos
+	else:
+		# Se o jogador errou, aumenta a contagem da sequência de erros
+		erros_seguidos_atual[fase] += 1
+
+	# Atualiza a maior sequência de erros se necessário
+	if erros_seguidos_atual[fase] > maior_sequencia_erros[fase]:
+		maior_sequencia_erros[fase] = erros_seguidos_atual[fase]
+
+	print("Maior sequência de erros registrada:", maior_sequencia_erros[fase])
 
 func register_total_time(fase, n):
 	total_time[fase] = n
@@ -47,14 +73,37 @@ func register_all_interactions(fase, n):
 	interactions_data[fase] = n
 	print("Interações armazenadas.")
 
+	# Tempo até a primeira interação
 	tempo_ate_primeira_interacao[fase] = interactions_data[fase][0]
 	print('Tempo até primeira interação armazenado.')
 
 	var soma_intervalos = 0.0
+	var soma_ocioso = 0.0  # Soma dos intervalos ociosos
+
 	for i in range(1, n.size()):
-		soma_intervalos += n[i] - n[i - 1]
-	tempo_medio_interactions[fase] = soma_intervalos / (n.size() - 1)
+		var intervalo = n[i] - n[i - 1]
+		soma_intervalos += intervalo
+		soma_ocioso += intervalo  # Como os intervalos representam tempo sem interação, são "ociosos"
+
+	# Calcula tempo médio entre interações
+	if n.size() > 1:
+		tempo_medio_interactions[fase] = soma_intervalos / (n.size() - 1)
+	else:
+		tempo_medio_interactions[fase] = 0.0  # Caso não tenha interações suficientes
+
 	print('Tempo médio entre interações registrado.')
+
+	# Cálculo do tempo ocioso total
+	tempo_ocioso[fase] = total_time[fase] - soma_intervalos
+	print("Tempo de ociosidade registrado:", tempo_ocioso[fase])
+
+	# Cálculo do tempo médio de ociosidade
+	if n.size() > 1:
+		tempo_medio_ocioso[fase] = soma_ocioso / (n.size() - 1)
+	else:
+		tempo_medio_ocioso[fase] = tempo_ocioso[fase]  # Se só tem uma interação, toda a fase foi ociosa
+
+	print("Tempo médio de ociosidade registrado:", tempo_medio_ocioso[fase])
 	
 func get_next_user_id(xml_content: String) -> int:
 	var user_id = 1
@@ -110,11 +159,12 @@ func save_data_to_xml():
 		xml_content += "        <tempo_ate_primeira_interacao>%.2f</tempo_ate_primeira_interacao>\n" % tempo_ate_primeira_interacao[i]
 		xml_content += "        <tempo_medio_clicks>%.2f</tempo_medio_clicks>\n" % tempo_medio_clicks[i]
 		xml_content += "        <tempo_medio_interactions>%.2f</tempo_medio_interactions>\n" % tempo_medio_interactions[i]
-		xml_content += "        <interacoes>%s</interacoes>\n" % str(interactions_data)
-		
-
+		xml_content += "        <tempo_ocioso>%.2f</tempo_ocioso>\n" % tempo_ocioso[i]
+		xml_content += "        <tempo_médio_ociosidades>%.2f</tempo_médio_ociosidades>\n" % tempo_medio_ocioso[i]
+		xml_content += "        <maior_sequencia_erros>%s</maior_sequencia_erros>\n" % maior_sequencia_erros[i]
 		xml_content += "      </fase>\n"
 
+	# **Fechar a tag </usuario> fora do loop**
 	xml_content += "  </usuario>\n"
 	xml_content += "</game_data>\n"
 

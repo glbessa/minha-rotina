@@ -235,9 +235,8 @@ func _on_next_level_button_pressed() -> void:
 	Statistics.register_hints(level_index, hint1_used, hint2_used)
 	Statistics.register_all_clicks(level_index, all_clicks)
 	Statistics.register_all_interactions(level_index, interactions)
-	Statistics.register_missplacement_error(level_index, missplacements)
+	Statistics.register_missplacement_error(level_index, missplacements, correct_placement)
 	Statistics.register_correct_pieces(level_index, total_correct_placements)
-	# No último nível, salva os dados antes de voltar ao menu
 	if level_index == 3:
 		Statistics.save_data_to_xml()
 		
