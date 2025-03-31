@@ -58,9 +58,11 @@ func _ready():
 	select_button.pressed.connect(_on_select_path_button_pressed)
 
 func _on_volume_value_changed(value: float) -> void:
+	Global.music_volume = value
 	AudioServer.set_bus_volume_db(0, value)
 
 func _on_musica_toggle_toggled(toggled_on: bool) -> void:
+	Global.music_on = toggled_on
 	MainMusic.playing = toggled_on
 
 func _on_voltar_pressed() -> void:
@@ -77,9 +79,6 @@ func _on_hint_1_value_changed(value: float) -> void:
 func _on_hint_2_value_changed(value: float) -> void:
 	Global.hint_2_time = value
 	label_hint2_value.text = str(int(value))
-	
-	file_dialog.current_file = "save_data.dat"
-	file_dialog.popup_centered(Vector2(800, 600))
 
 func _on_select_path_button_pressed() -> void:
 	if OS.get_name() == "Android":

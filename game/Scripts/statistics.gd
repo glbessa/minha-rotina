@@ -143,29 +143,88 @@ func save_data_to_xml():
 		xml_content = xml_content.replace("</game_data>", "")
 
 	# Adiciona um novo usuário ao XML
-	xml_content += "  <usuario id='%d'>\n" % user_id
-	xml_content += "      <data>%s</data>\n" % formatted_date
-
+	xml_content += "\t<usuario id='%d'>\n" % user_id
+	xml_content += "\t\t<data>%s</data>\n" % formatted_date
+	xml_content += "\t\t<config>\n"
+	xml_content += "\t\t\t<musica_ligada>%s</musica_ligada>\n" % ("true" if Global.music_on else "false")
+	xml_content += "\t\t\t<musica_volume>%d</musica_volume>\n" % Global.music_volume
+	xml_content += "\t\t\t<erros_para_dica_1>%d</erros_para_dica_1>\n" % Global.hint_1_count
+	xml_content += "\t\t\t<tempo_de_ociosidade_para_dica_2>%d</tempo_de_ociosidade_para_dica_2>\n" % Global.hint_2_time
+	xml_content += "\t\t\t<tempo_memorizacao>%d</tempo_memorizacao>\n" % Global.level_start_duration
+	xml_content += "\t\t</config>\n"
+	xml_content += "\t\t<fases>\n"
 	for i in range(4):  # Supondo que existam 4 fases
-		xml_content += "      <fase id='%d'>\n" % (i + 1)
-		xml_content += "        <pecas_corretas>%d</pecas_corretas>\n" % counter_correct_pieces[i]
-		xml_content += "        <erro_colocacao>%d</erro_colocacao>\n" % counter_missplacement_error[i]
-		xml_content += "        <tempo_total>%d</tempo_total>\n" % total_time[i]
-		xml_content += "        <cliques>%d</cliques>\n" % click_data[i]
-		xml_content += "        <dicas1_usadas>%d</dicas1_usadas>\n" % hint1_used[i]
-		xml_content += "        <dicas2_usadas>%d</dicas2_usadas>\n" % hint2_used[i]
-		xml_content += "        <tempo_medio_entre_acertos>%.2f</tempo_medio_entre_acertos>\n" % tempo_medio_entre_acertos[i]
-		xml_content += "        <tempo_medio_entre_erros>%.2f</tempo_medio_entre_erros>\n" % tempo_medio_entre_erros[i]
-		xml_content += "        <tempo_ate_primeira_interacao>%.2f</tempo_ate_primeira_interacao>\n" % tempo_ate_primeira_interacao[i]
-		xml_content += "        <tempo_medio_clicks>%.2f</tempo_medio_clicks>\n" % tempo_medio_clicks[i]
-		xml_content += "        <tempo_medio_interactions>%.2f</tempo_medio_interactions>\n" % tempo_medio_interactions[i]
-		xml_content += "        <tempo_ocioso>%.2f</tempo_ocioso>\n" % tempo_ocioso[i]
-		xml_content += "        <tempo_médio_ociosidades>%.2f</tempo_médio_ociosidades>\n" % tempo_medio_ocioso[i]
-		xml_content += "        <maior_sequencia_erros>%s</maior_sequencia_erros>\n" % maior_sequencia_erros[i]
-		xml_content += "      </fase>\n"
+		xml_content += "\t\t\t<fase id='%d'>\n" % (i + 1)
+		xml_content += "\t\t\t\t<pecas_posicionadas_corretamente>%d</pecas_posicionadas_corretamente>\n" % counter_correct_pieces[i]
+		xml_content += "\t\t\t\t<pecas_posicionadas_incorretamente>%d</pecas_posicionadas_incorretamente>\n" % counter_missplacement_error[i]
+		xml_content += "\t\t\t\t<tempo_total>%d</tempo_total>\n" % total_time[i]
+		xml_content += "\t\t\t\t<cliques>%d</cliques>\n" % click_data[i]
+		xml_content += "\t\t\t\t<dicas1_usadas>%d</dicas1_usadas>\n" % hint1_used[i]
+		xml_content += "\t\t\t\t<dicas2_usadas>%d</dicas2_usadas>\n" % hint2_used[i]
+		xml_content += "\t\t\t\t<tempo_medio_entre_acertos>%.2f</tempo_medio_entre_acertos>\n" % tempo_medio_entre_acertos[i]
+		xml_content += "\t\t\t\t<tempo_medio_entre_erros>%.2f</tempo_medio_entre_erros>\n" % tempo_medio_entre_erros[i]
+		xml_content += "\t\t\t\t<tempo_ate_primeira_interacao>%.2f</tempo_ate_primeira_interacao>\n" % tempo_ate_primeira_interacao[i]
+		xml_content += "\t\t\t\t<tempo_medio_entre_clicks>%.2f</tempo_medio_entre_clicks>\n" % tempo_medio_clicks[i]
+		xml_content += "\t\t\t\t<tempo_medio_de_duracao_das_interacoes>%.2f</tempo_medio_de_duracao_das_interacoes>\n" % tempo_medio_interactions[i]
+		xml_content += "\t\t\t\t<tempo_ocioso>%.2f</tempo_ocioso>\n" % tempo_ocioso[i]
+		xml_content += "\t\t\t\t<tempo_médio_de_ociosidades>%.2f</tempo_médio_de_ociosidades>\n" % tempo_medio_ocioso[i]
+		xml_content += "\t\t\t\t<maior_sequencia_erros>%s</maior_sequencia_erros>\n" % maior_sequencia_erros[i]
+		xml_content += "\t\t\t</fase>\n"
+		
+	xml_content += "\t\t</fases>\n"
+	xml_content += "\t\t<total_fases>\n"
+	
+	# Calcular totais
+	var total_correct = 0
+	var total_incorrect = 0
+	var total_time_sum = 0
+	var total_clicks = 0
+	var total_hint1 = 0
+	var total_hint2 = 0
+	var avg_between_hits = 0.0
+	var avg_between_errors = 0.0
+	var avg_first_interaction = 0.0
+	var avg_between_clicks = 0.0
+	var avg_interaction_duration = 0.0
+	var total_idle_time = 0.0
+	var avg_idle_time = 0.0
+	var max_error_sequence = 0
+	
+	for i in range(4):
+		total_correct += counter_correct_pieces[i]
+		total_incorrect += counter_missplacement_error[i]
+		total_time_sum += total_time[i]
+		total_clicks += click_data[i]
+		total_hint1 += hint1_used[i]
+		total_hint2 += hint2_used[i]
+		avg_between_hits += tempo_medio_entre_acertos[i]
+		avg_between_errors += tempo_medio_entre_erros[i]
+		avg_first_interaction += tempo_ate_primeira_interacao[i]
+		avg_between_clicks += tempo_medio_clicks[i]
+		avg_interaction_duration += tempo_medio_interactions[i]
+		total_idle_time += tempo_ocioso[i]
+		avg_idle_time += tempo_medio_ocioso[i]
+		if maior_sequencia_erros[i] > max_error_sequence:
+			max_error_sequence = maior_sequencia_erros[i]
+	
+	xml_content += "\t\t\t<pecas_posicionadas_corretamente>%d</pecas_posicionadas_corretamente>\n" % total_correct
+	xml_content += "\t\t\t<pecas_posicionadas_incorretamente>%d</pecas_posicionadas_incorretamente>\n" % total_incorrect
+	xml_content += "\t\t\t<tempo_total>%d</tempo_total>\n" % total_time_sum
+	xml_content += "\t\t\t<cliques>%d</cliques>\n" % total_clicks
+	xml_content += "\t\t\t<dicas1_usadas>%d</dicas1_usadas>\n" % total_hint1
+	xml_content += "\t\t\t<dicas2_usadas>%d</dicas2_usadas>\n" % total_hint2
+	xml_content += "\t\t\t<tempo_medio_entre_acertos>%.2f</tempo_medio_entre_acertos>\n" % (avg_between_hits / 4.0)
+	xml_content += "\t\t\t<tempo_medio_entre_erros>%.2f</tempo_medio_entre_erros>\n" % (avg_between_errors / 4.0)
+	xml_content += "\t\t\t<tempo_medio_ate_primeira_interacao>%.2f</tempo_medio_ate_primeira_interacao>\n" % (avg_first_interaction / 4.0)
+	xml_content += "\t\t\t<tempo_medio_entre_clicks>%.2f</tempo_medio_entre_clicks>\n" % (avg_between_clicks / 4.0)
+	xml_content += "\t\t\t<tempo_medio_de_duracao_das_interacoes>%.2f</tempo_medio_de_duracao_das_interacoes>\n" % (avg_interaction_duration / 4.0)
+	xml_content += "\t\t\t<tempo_ocioso>%.2f</tempo_ocioso>\n" % total_idle_time
+	xml_content += "\t\t\t<tempo_médio_de_ociosidades>%.2f</tempo_médio_de_ociosidades>\n" % (avg_idle_time / 4.0)
+	xml_content += "\t\t\t<maior_sequencia_erros>%s</maior_sequencia_erros>\n" % max_error_sequence
+	xml_content += "\t\t</total_fases>\n"
 
 	# **Fechar a tag </usuario> fora do loop**
-	xml_content += "  </usuario>\n"
+	xml_content += "\t</usuario>\n"
 	xml_content += "</game_data>\n"
 
 	# Salva o XML atualizado

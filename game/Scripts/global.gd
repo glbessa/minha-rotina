@@ -5,6 +5,8 @@ var level_start_duration = 5
 var hint_1_count = 3
 var hint_2_time = 15
 var save_path = "user://game_data.xml"  # Valor padrão
+var music_on = true
+var music_volume = 0
 
 func _ready():
 	load_save_path()  # Carregar valor salvo ao iniciar
