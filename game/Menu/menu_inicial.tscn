@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3tfwboodjqrs"]
 
 [ext_resource type="Script" uid="uid://b54v2gs65p5is" path="res://Scripts/menu_inicial.gd" id="1_ktf6r"]
-[ext_resource type="FontFile" uid="uid://be8sj6im6edhk" path="res://Fonts/COOPBL.TTF" id="2_af7h5"]
-[ext_resource type="Texture2D" uid="uid://c06jgkffpj2fc" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
-[ext_resource type="Texture2D" uid="uid://danek2aam2rdx" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
-[ext_resource type="Texture2D" uid="uid://d1wrm8xhsur75" path="res://Backgrounds/background.png" id="4_awogh"]
-[ext_resource type="Texture2D" uid="uid://dil155of6u2x1" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
+[ext_resource type="FontFile" uid="uid://dcq3urbilb6jj" path="res://Fonts/COOPBL.TTF" id="2_af7h5"]
+[ext_resource type="Texture2D" uid="uid://cqwxbb812ujwc" path="res://Buttons/Jogar-removebg-preview.png" id="2_kb4sh"]
+[ext_resource type="Texture2D" uid="uid://8wvqvfwsw53d" path="res://Buttons/imagem_2025-03-08_195857875-removebg-preview.png" id="3_te1wd"]
+[ext_resource type="Texture2D" uid="uid://bpmq6erckv70e" path="res://Backgrounds/background.png" id="4_awogh"]
+[ext_resource type="Texture2D" uid="uid://bnq7ik5iw0b6s" path="res://Backgrounds/arco_iris_png.png" id="5_ukajr"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_ktf6r")

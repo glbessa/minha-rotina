@@ -1,26 +1,26 @@
 [gd_scene load_steps=31 format=3 uid="uid://d0te8ow5rnmra"]
 
 [ext_resource type="Script" uid="uid://ca3fptmqogj6e" path="res://Levels/level_4.gd" id="1_0xf1t"]
-[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="1_8525h"]
-[ext_resource type="FontFile" uid="uid://dn7o44amkqfcd" path="res://Fonts/COOPBL.TTF" id="2_5pqm8"]
-[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="2_xlqhf"]
-[ext_resource type="Texture2D" uid="uid://bjmqxjk1gm7av" path="res://Backgrounds/house_background.png" id="3_7bqri"]
-[ext_resource type="Texture2D" uid="uid://jiqvaowqm4wb" path="res://Images/full/noite_1.png" id="4_etm6j"]
-[ext_resource type="Texture2D" uid="uid://r770dn62xipf" path="res://Images/full/noite_2.png" id="5_1bjps"]
-[ext_resource type="Texture2D" uid="uid://c08ha010ivoqx" path="res://Images/full/noite_3.png" id="6_8fsqc"]
-[ext_resource type="Texture2D" uid="uid://baaym71x2en2s" path="res://Images/full/noite_4.png" id="7_xqub4"]
+[ext_resource type="FontFile" uid="uid://bkxddyjurdbms" path="res://Fonts/RAVIE.TTF" id="1_8525h"]
+[ext_resource type="FontFile" uid="uid://dcq3urbilb6jj" path="res://Fonts/COOPBL.TTF" id="2_5pqm8"]
+[ext_resource type="Texture2D" uid="uid://bpmq6erckv70e" path="res://Backgrounds/background.png" id="2_xlqhf"]
+[ext_resource type="Texture2D" uid="uid://dern6wbw47qyj" path="res://Backgrounds/house_background.png" id="3_7bqri"]
+[ext_resource type="Texture2D" uid="uid://dollf4lpj1kwb" path="res://Images/full/noite_1.png" id="4_etm6j"]
+[ext_resource type="Texture2D" uid="uid://cl0aehptpyeyu" path="res://Images/full/noite_2.png" id="5_1bjps"]
+[ext_resource type="Texture2D" uid="uid://d1sk5cy5v38sq" path="res://Images/full/noite_3.png" id="6_8fsqc"]
+[ext_resource type="Texture2D" uid="uid://chu7uwpyjc7hw" path="res://Images/full/noite_4.png" id="7_xqub4"]
 [ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="8_7emau"]
-[ext_resource type="Texture2D" uid="uid://d3f13lvosimh1" path="res://Images/background/noite_1_bg.png" id="10_5pqm8"]
-[ext_resource type="Texture2D" uid="uid://c5l4ch1k32oej" path="res://Images/background/noite_2_bg.png" id="11_f0t86"]
-[ext_resource type="Texture2D" uid="uid://drd81fhqdacjs" path="res://Images/background/noite_3_bg.png" id="12_rocm8"]
-[ext_resource type="Texture2D" uid="uid://cybmd8hwampki" path="res://Images/background/noite_4_bg.png" id="13_gmwyd"]
+[ext_resource type="Texture2D" uid="uid://bcg8b5un68amh" path="res://Images/background/noite_1_bg.png" id="10_5pqm8"]
+[ext_resource type="Texture2D" uid="uid://d3ith52sath57" path="res://Images/background/noite_2_bg.png" id="11_f0t86"]
+[ext_resource type="Texture2D" uid="uid://bvylgum8o13wd" path="res://Images/background/noite_3_bg.png" id="12_rocm8"]
+[ext_resource type="Texture2D" uid="uid://yhlu45o35uvl" path="res://Images/background/noite_4_bg.png" id="13_gmwyd"]
 [ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="14_nbdlk"]
-[ext_resource type="Texture2D" uid="uid://bmrin7e7xy776" path="res://Images/pieces/noite_1_piece_1.png" id="15_ef48p"]
-[ext_resource type="Texture2D" uid="uid://cx234w7j12mrh" path="res://Images/pieces/noite_1_piece_2.png" id="16_gqkj3"]
-[ext_resource type="Texture2D" uid="uid://c8i7ktpljgunu" path="res://Images/pieces/noite_2_piece_1.png" id="17_veied"]
-[ext_resource type="Texture2D" uid="uid://dunl4h2hefv0x" path="res://Images/pieces/noite_2_piece_2.png" id="18_vsfdw"]
-[ext_resource type="Texture2D" uid="uid://lmutwdul7qaf" path="res://Images/pieces/noite_3_piece_1.png" id="19_buuxg"]
-[ext_resource type="Texture2D" uid="uid://cl0vncl5qnesx" path="res://Images/pieces/noite_4_piece_1.png" id="20_ao5tc"]
+[ext_resource type="Texture2D" uid="uid://dpy3jryruopwd" path="res://Images/pieces/noite_1_piece_1.png" id="15_ef48p"]
+[ext_resource type="Texture2D" uid="uid://bykkhaueji5hy" path="res://Images/pieces/noite_1_piece_2.png" id="16_gqkj3"]
+[ext_resource type="Texture2D" uid="uid://cb6fhsotdh3xe" path="res://Images/pieces/noite_2_piece_1.png" id="17_veied"]
+[ext_resource type="Texture2D" uid="uid://dj3q7ysq72rpc" path="res://Images/pieces/noite_2_piece_2.png" id="18_vsfdw"]
+[ext_resource type="Texture2D" uid="uid://bv5fh0icyve4n" path="res://Images/pieces/noite_3_piece_1.png" id="19_buuxg"]
+[ext_resource type="Texture2D" uid="uid://cgpklbv4w1uam" path="res://Images/pieces/noite_4_piece_1.png" id="20_ao5tc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psjp3"]
 bg_color = Color(0.709804, 0.584314, 0.768627, 1)
@@ -103,7 +103,7 @@ uppercase = true
 
 [node name="puzzle1_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start", "show_hint2"]]
 position = Vector2(651, 350)
-scale = Vector2(0.033, 0.033)
+scale = Vector2(0.231, 0.231)
 texture = ExtResource("4_etm6j")
 
 [node name="Label Puzzle2" type="Label" parent="ParallaxBackground/ParallaxLayer"]
@@ -248,7 +248,7 @@ uppercase = true
 [node name="puzzle1_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
 z_index = 1
 position = Vector2(651, 350)
-scale = Vector2(0.033, 0.033)
+scale = Vector2(0.231, 0.231)
 texture = ExtResource("10_5pqm8")
 
 [node name="puzzle1_piece_1" type="Node2D" parent="." groups=["puzzle", "puzzle_1_piece_1"]]
@@ -257,7 +257,7 @@ position = Vector2(95, 670)
 script = ExtResource("14_nbdlk")
 
 [node name="Sprite2D" type="Sprite2D" parent="puzzle1_piece_1"]
-scale = Vector2(0.033, 0.033)
+scale = Vector2(0.264, 0.264)
 texture = ExtResource("15_ef48p")
 
 [node name="Area2D" type="Area2D" parent="puzzle1_piece_1"]
@@ -293,7 +293,7 @@ position = Vector2(100, 239)
 script = ExtResource("14_nbdlk")
 
 [node name="Sprite2D" type="Sprite2D" parent="puzzle1_piece_2"]
-scale = Vector2(0.033, 0.033)
+scale = Vector2(0.264, 0.264)
 texture = ExtResource("16_gqkj3")
 
 [node name="Area2D" type="Area2D" parent="puzzle1_piece_2"]

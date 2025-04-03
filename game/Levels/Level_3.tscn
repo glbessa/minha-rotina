@@ -1,23 +1,23 @@
 [gd_scene load_steps=32 format=3 uid="uid://dpkmctgla1k24"]
 
-[ext_resource type="FontFile" uid="uid://djpoigjmwkqyh" path="res://Fonts/RAVIE.TTF" id="1_c0thm"]
+[ext_resource type="FontFile" uid="uid://bkxddyjurdbms" path="res://Fonts/RAVIE.TTF" id="1_c0thm"]
 [ext_resource type="Script" uid="uid://camyhr1mfu3t3" path="res://Levels/level_3.gd" id="1_v1481"]
-[ext_resource type="FontFile" uid="uid://dn7o44amkqfcd" path="res://Fonts/COOPBL.TTF" id="2_5i5cj"]
-[ext_resource type="Texture2D" uid="uid://capvcnd7p86gs" path="res://Backgrounds/background.png" id="2_fwchg"]
-[ext_resource type="Texture2D" uid="uid://bjmqxjk1gm7av" path="res://Backgrounds/house_background.png" id="3_4t04n"]
-[ext_resource type="Texture2D" uid="uid://d2ycydgyqsqjl" path="res://Images/full/tarde_1.png" id="4_knaiw"]
-[ext_resource type="Texture2D" uid="uid://c34stccd1yf1q" path="res://Images/full/tarde_2.png" id="5_vkhu4"]
-[ext_resource type="Texture2D" uid="uid://1lx1khos00p6" path="res://Images/full/tarde_3.png" id="6_y58m1"]
+[ext_resource type="FontFile" uid="uid://dcq3urbilb6jj" path="res://Fonts/COOPBL.TTF" id="2_5i5cj"]
+[ext_resource type="Texture2D" uid="uid://bpmq6erckv70e" path="res://Backgrounds/background.png" id="2_fwchg"]
+[ext_resource type="Texture2D" uid="uid://dern6wbw47qyj" path="res://Backgrounds/house_background.png" id="3_4t04n"]
+[ext_resource type="Texture2D" uid="uid://don4oft0efxmv" path="res://Images/full/tarde_1.png" id="4_knaiw"]
+[ext_resource type="Texture2D" uid="uid://1iw8da3kvpgj" path="res://Images/full/tarde_2.png" id="5_vkhu4"]
+[ext_resource type="Texture2D" uid="uid://bjxvvfmm2q5s6" path="res://Images/full/tarde_3.png" id="6_y58m1"]
 [ext_resource type="Script" uid="uid://b2gb1avgn40lw" path="res://Scripts/puzzle_dropabble.gd" id="7_46jcg"]
-[ext_resource type="Texture2D" uid="uid://tegkcjila3" path="res://Images/background/tarde_1_bg.png" id="8_5i5cj"]
-[ext_resource type="Texture2D" uid="uid://jwg0qpi5mtqf" path="res://Images/background/tarde_3_bg.png" id="10_b7oya"]
-[ext_resource type="Texture2D" uid="uid://h6b8mmbqldit" path="res://Images/background/tarde_2_bg.png" id="11_pcetg"]
+[ext_resource type="Texture2D" uid="uid://dr7jclcdm3ot6" path="res://Images/background/tarde_1_bg.png" id="8_5i5cj"]
+[ext_resource type="Texture2D" uid="uid://q73kdm7xhbxj" path="res://Images/background/tarde_3_bg.png" id="10_b7oya"]
+[ext_resource type="Texture2D" uid="uid://dt7u452aqkp82" path="res://Images/background/tarde_2_bg.png" id="11_pcetg"]
 [ext_resource type="Script" uid="uid://dkpgsxjrkc0c" path="res://Scripts/puzzle_piece.gd" id="12_vq0cm"]
-[ext_resource type="Texture2D" uid="uid://co6dbaoaepdys" path="res://Images/pieces/tarde_1_piece_1.png" id="13_ljt6e"]
-[ext_resource type="Texture2D" uid="uid://bm6qqmkaf5jvy" path="res://Images/pieces/tarde_2_piece_1.png" id="14_7ybrn"]
-[ext_resource type="Texture2D" uid="uid://ce28ch02pl8jh" path="res://Images/pieces/tarde_2_piece_2.png" id="15_rbrc7"]
-[ext_resource type="Texture2D" uid="uid://bp6bta4hlekj3" path="res://Images/pieces/tarde_3_piece_1.png" id="16_awy6g"]
-[ext_resource type="Texture2D" uid="uid://docyr8yi0sjyu" path="res://Images/pieces/tarde_3_piece_2.png" id="17_vru53"]
+[ext_resource type="Texture2D" uid="uid://bh21to11rq8ju" path="res://Images/pieces/tarde_1_piece_1.png" id="13_ljt6e"]
+[ext_resource type="Texture2D" uid="uid://dplmcc8silmgc" path="res://Images/pieces/tarde_2_piece_1.png" id="14_7ybrn"]
+[ext_resource type="Texture2D" uid="uid://dspo183n13b2p" path="res://Images/pieces/tarde_2_piece_2.png" id="15_rbrc7"]
+[ext_resource type="Texture2D" uid="uid://btv381sji63n4" path="res://Images/pieces/tarde_3_piece_1.png" id="16_awy6g"]
+[ext_resource type="Texture2D" uid="uid://ck5f3y63svu5l" path="res://Images/pieces/tarde_3_piece_2.png" id="17_vru53"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i5cj"]
 bg_color = Color(0.709804, 0.584314, 0.768627, 1)
@@ -148,7 +148,7 @@ uppercase = true
 
 [node name="puzzle3_full" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" groups=["level_end", "level_start", "show_hint2"]]
 position = Vector2(1010, 506)
-scale = Vector2(0.12, 0.12)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("6_y58m1")
 
 [node name="PanelContainer" type="PanelContainer" parent="ParallaxBackground/ParallaxLayer" groups=["level_end"]]
@@ -281,7 +281,7 @@ color = Color(1, 1, 1, 0)
 [node name="puzzle2_transparent" type="Sprite2D" parent="." groups=["puzzle"]]
 z_index = 1
 position = Vector2(1010, 506)
-scale = Vector2(0.12, 0.12)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("10_b7oya")
 
 [node name="puzzle2_piece_1" type="Node2D" parent="." groups=["puzzle", "puzzle_2_piece_1"]]
